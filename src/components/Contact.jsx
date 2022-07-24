@@ -25,7 +25,8 @@ const contactIcons = {
 }
 
 const contactIcon = {
-    margin: '8px',
+    marginRight: '16px',
+    marginLeft: '0',
     width: '32px'
 
 }
