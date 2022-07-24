@@ -38,9 +38,7 @@ let navOptionsContainer = {
 
 const navOptionContainer = {
   padding: '0',
-  marginTop: '4px',
-  marginBottom: '4px',
-  
+  marginTop: '4px'  
 }
 
 

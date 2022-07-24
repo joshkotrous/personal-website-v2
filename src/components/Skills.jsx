@@ -4,10 +4,10 @@ import '../fonts.css'
 
 const container = {
     display: 'flex',
+    justifyContent: 'center',
     flexDirection: 'column',
     height: '100vh',
-    justifyContent: 'center',
-    padding: '16px',
+    padding: '16px'
 }
 
 const skillsHeader = {
@@ -17,8 +17,31 @@ const skillsHeader = {
 }
 
 const skillItemsContainer = {
-    padding: '4px'
+    // padding: '4px'
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
 
+}
+
+const skillHeaders = {
+    height: '100%'
+}
+
+const skillHeader = {
+    display: 'flex',
+    justifyContent: 'right',
+    alignItems: 'center',
+    height: '50px',
+    marginRight: '24px',
+    fontFamily: 'Urbanist',
+    color: 'white',
+    fontSize: '18px'
+
+}
+
+const skillBars = {
+    height: '100%'
 }
 
 const skillItemContainer = {
@@ -31,7 +54,6 @@ const skillItemContainer = {
 
 
 const skillItemHeader = {
-    textAlign: 'right',
     color: 'white',
     fontWeight: '300',
     // width: '75px'
@@ -39,16 +61,14 @@ const skillItemHeader = {
 }
 
 const skillBarContainer = {
+    height: '50px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'left',
-    marginLeft: '24px',
-    width: '300px'
+    justifyContent: 'left'
 }
 
 const skillBarBackround = {
-    position: 'absolute',
-    width: '250px',
+    width: '275px',
     height: '5px',
     borderRadius: '30px',
     background: 'white',
@@ -57,7 +77,7 @@ const skillBarBackround = {
 
 const skillBarForeground100 = {
     position: 'absolute',
-    width: '250px',
+    width: '275px',
     height: '5px',
     background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
     borderRadius: '30px'
@@ -65,7 +85,7 @@ const skillBarForeground100 = {
 
 const skillBarForeground75 = {
     position: 'absolute',
-    width: '250px',
+    width: '205px',
     height: '5px',
     background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
     borderRadius: '30px'
@@ -73,7 +93,7 @@ const skillBarForeground75 = {
 
 const skillBarForeground50 = {
     position: 'absolute',
-    width: '150px',
+    width: '137px',
     height: '5px',
     background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
     borderRadius: '30px'
@@ -81,7 +101,7 @@ const skillBarForeground50 = {
 
 const skillBarForeground25 = {
     position: 'absolute',
-    width: '75px',
+    width: '68px',
     height: '5px',
     background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
     borderRadius: '30px'
@@ -91,7 +111,7 @@ const Skills = () => {
     return (
         <div id="skills" style={container}>
             <h1 style={skillsHeader}>skills</h1>
-            <div style={skillItemsContainer}>
+            {/* <div style={skillItemsContainer}>
                 <div style={skillItemContainer}>
                     <div style={skillItemHeader}>UiPath</div>
                     <div style={skillBarContainer}>
@@ -136,6 +156,43 @@ const Skills = () => {
                         <div style={skillBarForeground25}>
                         </div>
                     </div>
+                </div>
+            </div> */}
+
+            <div style={skillItemsContainer}>
+                <div style={skillHeaders}>
+                    <div style={skillHeader}>UiPath</div>
+                    <div style={skillHeader}>Workato</div>
+                    <div style={skillHeader}>React</div>
+                    <div style={skillHeader}>Python</div>
+                    <div style={skillHeader}>AWS</div>
+                </div>
+                <div style={skillBars}>
+                    <div style={skillBarContainer}>
+                        <div style={skillBarBackround}></div>
+                        <div style={skillBarForeground100}>
+                        </div>
+                    </div> 
+                    <div style={skillBarContainer}>
+                        <div style={skillBarBackround}></div>
+                        <div style={skillBarForeground100}>
+                        </div>
+                    </div> 
+                    <div style={skillBarContainer}>
+                        <div style={skillBarBackround}></div>
+                        <div style={skillBarForeground75}>
+                        </div>
+                    </div> 
+                    <div style={skillBarContainer}>
+                        <div style={skillBarBackround}></div>
+                        <div style={skillBarForeground50}>
+                        </div>
+                    </div> 
+                    <div style={skillBarContainer}>
+                        <div style={skillBarBackround}></div>
+                        <div style={skillBarForeground25}>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
