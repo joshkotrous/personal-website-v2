@@ -38,6 +38,9 @@ const About = () => {
             Most recently I've been focused on honing my full-stack development skills using React and Python to build maintainable, scalable, and responsive web applications.
             <br />
             <br />
+            This website was built with React, hosted on Amazon S3, and deployed with GitHub actions. 
+            <br />
+            <br />
             If you'd like to work with me or just chat, fill out the contact form at the bottom of the page. 
             <br />
             <br />
