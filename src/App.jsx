@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
-// import WelcomeHeader from "./components/WelcomeHeader.jsx"
+import WelcomeHeader from "./components/WelcomeHeader.jsx"
 import About from "./components/About.jsx"
 import Skills from "./components/Skills.jsx"
 import Projects from "./components/Projects.jsx"
@@ -25,7 +25,7 @@ function App() {
     <div style={appStyle}>
       <div style={appBackgroundStyle}></div>
       <Navigation/>
-      {/* <WelcomeHeader /> */}
+      <WelcomeHeader />
       <About />
       <Skills />
       <Projects />
