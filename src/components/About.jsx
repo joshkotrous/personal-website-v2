@@ -11,8 +11,6 @@ const aboutContainer = {
     padding: '16px',
     paddingTop: '32px',
     color: '#DDADF7',
-    marginTop: '32px'
-
 }
 
 const aboutItemContainer = {
@@ -29,7 +27,6 @@ const aboutItemHeader = {
 }
 
 const aboutItemSeparator = {
-    width: '100%',
     height: '1px',
     background: 'white'
 }
@@ -37,7 +34,7 @@ const aboutItemSeparator = {
 const aboutText = {
     fontWeight: '300',
     color: 'white',
-    fontFamily: 'Urbanist',
+    fontFamily: 'Urbanist'
 
 }
 

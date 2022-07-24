@@ -6,7 +6,8 @@ import { animated, useSpring } from '@react-spring/web'
 const navContainer = {
   position: 'fixed',
   width: '100%',
-  userSelect: 'none'
+  userSelect: 'none',
+  zIndex: '9999'
 }
 
 const headerContainer = {
@@ -38,7 +39,7 @@ let navOptionsContainer = {
 const navOptionContainer = {
   padding: '0',
   marginTop: '4px',
-  marginBottom: '10px',
+  marginBottom: '4px',
   
 }
 
@@ -84,10 +85,10 @@ const Navigation = () => {
         </div>
       </div>
       <div style={navOptionsContainer}>
-          <div style={navOptionContainer}><a style={navOption} href='./#about'>about</a></div>
-          <div style={navOptionContainer}><a style={navOption} href='./#skills'>skills</a></div>
-          <div style={navOptionContainer}><a style={navOption} href='./#projects'>projects</a></div>
-          <div style={navOptionContainer}><a style={navOption} href='./#contact'>contact</a></div>
+          <div style={navOptionContainer}><a onClick={menuClick} style={navOption} href='./#about'>about</a></div>
+          <div style={navOptionContainer}><a onClick={menuClick} style={navOption} href='./#skills'>skills</a></div>
+          <div style={navOptionContainer}><a onClick={menuClick} style={navOption} href='./#projects'>projects</a></div>
+          <div style={navOptionContainer}><a onClick={menuClick} style={navOption} href='./#contact'>contact</a></div>
       </div>
     </div>
 

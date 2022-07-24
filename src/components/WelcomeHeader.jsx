@@ -3,12 +3,16 @@ import '../fonts.css'
 import { animated, useSpring, config } from '@react-spring/web'
 
 
-
+const container = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100vh',
+}
 
 const welcomeHeaderContainer = {
     display: 'flex',
-    marginTop: '25vh',
-    marginBottom: '25vh',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -32,7 +36,7 @@ const cyclingText = {
 const WelcomeHeader = () => {
     const [index, setIndex] = useState(0)
 
-    const [headers]  = useState(["software development", "automation", "react", "uipath"])
+    const [headers]  = useState(["software", "automation", "react", "uipath", "python", "aws", "solution architecture"])
 
 
     useEffect(()=> {
@@ -50,17 +54,20 @@ const WelcomeHeader = () => {
 
 
   return (
-    <div id="home" style={welcomeHeaderContainer}>
-        <div style={{background:'white', width: '1px', height: '50%', margin: '16px'}}></div>
-        <div style={{display:'flex', flexDirection:'column',}}>
-            <div style={{background:'white', width: '100%', height: '1px', marginLeft: 'auto',marginRight: 'auto',marginBottom: '32px'}}></div>
-            <div style={headerTextContainer}>
-                <h1 style={{fontWeight:'300'}}>a <br></br><span style={cyclingText}>{headers[index]}</span><br></br> enthusiast</h1>
-            </div>
-            <div style={{background:'white', width: '100%', height: '1px', marginLeft: 'auto',marginRight: 'auto',marginTop: '32px'}}></div>
-        </div>
-        <div style={{background:'white', width: '1px', height: '50%', margin: '16px'}}></div>
-    </div>
+      <div style={container}>
+          <div id="home" style={welcomeHeaderContainer}>
+              <div style={{ background: 'white', width: '1px', height: '50%', margin: '16px' }}></div>
+              <div style={{ display: 'flex', flexDirection: 'column', }}>
+                  <div style={{ background: 'white', width: '100%', height: '1px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '32px' }}></div>
+                  <div style={headerTextContainer}>
+                      <h1 style={{ fontWeight: '300' }}>a <br></br><span style={cyclingText}>{headers[index]}</span><br></br> enthusiast</h1>
+                  </div>
+                  <div style={{ background: 'white', width: '100%', height: '1px', marginLeft: 'auto', marginRight: 'auto', marginTop: '32px' }}></div>
+              </div>
+              <div style={{ background: 'white', width: '1px', height: '50%', margin: '16px' }}></div>
+          </div>
+      </div>
+
   )
 }
 
