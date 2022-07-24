@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
-import WelcomeHeader from "./components/WelcomeHeader.jsx"
+// import WelcomeHeader from "./components/WelcomeHeader.jsx"
 import About from "./components/About.jsx"
 import Skills from "./components/Skills.jsx"
 import Projects from "./components/Projects.jsx"
