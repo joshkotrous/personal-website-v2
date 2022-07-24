@@ -40,7 +40,7 @@ const WelcomeHeader = () => {
     useEffect(()=> {
         const interval = setInterval(() => {
             setIndex(index + 1)
-            if (index == headers.length - 1) {
+            if (index === headers.length - 1) {
                 setIndex(0);
             }
             console.log(index)

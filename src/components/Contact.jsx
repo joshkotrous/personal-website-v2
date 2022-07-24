@@ -85,8 +85,8 @@ const Contact = () => {
     <div id="contact" style={container}>
         <h1 style={header}>contact</h1>
         <div style={contactIcons}>
-            <a href='https://github.com/joshkotrous' target='_blank'><GitHub style={contactIcon} /></a>
-            <a href='https://www.linkedin.com/in/joshkotrous/'  target='_blank'><LinkedIn style={contactIcon}/></a>
+            <a href='https://github.com/joshkotrous' rel="noreferrer" target='_blank'><GitHub style={contactIcon} /></a>
+            <a href='https://www.linkedin.com/in/joshkotrous/'  rel="noreferrer" target='_blank'><LinkedIn style={contactIcon}/></a>
         </div>
         <form style={formContainer}>
             <input style={emailInput}  type="text" name="name" placeholder='name' />
