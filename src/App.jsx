@@ -25,7 +25,7 @@ function App() {
     <div style={appStyle}>
       <div style={appBackgroundStyle}></div>
       <Navigation/>
-      <WelcomeHeader />
+      {/* <WelcomeHeader /> */}
       <About />
       <Skills />
       <Projects />
