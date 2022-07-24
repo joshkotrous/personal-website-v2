@@ -8,27 +8,13 @@ const aboutHeader = {
 }
 
 const aboutContainer = {
+    height: '100vh',
+    display:'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     padding: '16px',
     paddingTop: '32px',
     color: '#DDADF7',
-}
-
-const aboutItemContainer = {
-    marginBottom: '25vh'
-}
-
-const aboutItemHeader = {
-    color: 'white',
-    fontWeight: '300',
-    fontSize: '36px',
-    fontFamily: 'Urbanist',
-
-
-}
-
-const aboutItemSeparator = {
-    height: '1px',
-    background: 'white'
 }
 
 const aboutText = {
@@ -39,26 +25,24 @@ const aboutText = {
 }
 
 const About = () => {
-    const [aboutItems] = useState([
-        {text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.", year: "2022"},
-        {text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.", year: "2022"},
-        {text: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.", year: "2022"}
-
-    ])
-
-    const renderAboutList = aboutItems.map((item, index) => 
-        <div key={index} style={aboutItemContainer}>
-            <h2 style={aboutItemHeader}>{item.year}</h2>
-            <div style={aboutItemSeparator}></div>
-        <p style={aboutText}>{item.text}</p>
-        </div>
-    );
-
-
   return (
     <div id="about" style={aboutContainer}>
         <h1  style={aboutHeader}>about me</h1>
-        {renderAboutList}
+        <p style={aboutText}>
+            <span style={{fontWeight: '500'}}>My name is Josh Kotrous.</span>
+            <br />
+            <br />
+            Currently working for Neostella as the Development Manager, I am a software developer focused on constantly learning new things and expanding my abilities. I am particularly experienced in implementing automations to complete complex business processes and leading high-performing software delivery teams. 
+            <br />
+            <br />
+            Most recently I've been focused on honing my full-stack development skills using React and Python to build maintainable, scalable, and responsive web applications.
+            <br />
+            <br />
+            If you'd like to work with me or just chat, fill out the contact form at the bottom of the page. 
+            <br />
+            <br />
+            Thanks for visiting!
+        </p>
     </div>
   )
 }

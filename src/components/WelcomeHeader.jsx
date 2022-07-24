@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import '../fonts.css'
-import { animated, useSpring, config } from '@react-spring/web'
-
 
 const container = {
     display: 'flex',

@@ -12,7 +12,6 @@ const container= {
     height: '100vh',
     padding: '16px', 
     color: '#DDADF7',
-    marginBottom: '25vh',
 }
 
 const header = {
@@ -27,7 +26,7 @@ const contactIcons = {
 const contactIcon = {
     marginRight: '16px',
     marginLeft: '0',
-    width: '32px'
+    width: '32px',
 
 }
 
@@ -80,6 +79,8 @@ const submitButton = {
 }
 
 const Contact = () => {
+
+
   return (
     <div id="contact" style={container}>
         <h1 style={header}>contact</h1>

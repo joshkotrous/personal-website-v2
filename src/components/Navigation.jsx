@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import '../fonts.css'
 import {ReactComponent as Hamburger} from '../hamburger.svg'
-import { animated, useSpring } from '@react-spring/web'
 
 const navContainer = {
   position: 'fixed',

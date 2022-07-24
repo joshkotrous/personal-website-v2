@@ -36,28 +36,13 @@ const skillHeader = {
     marginRight: '24px',
     fontFamily: 'Urbanist',
     color: 'white',
-    fontSize: '18px'
+    fontSize: '18px',
+    fontWeight: '500'
 
 }
 
 const skillBars = {
     height: '100%'
-}
-
-const skillItemContainer = {
-    display: 'flex',
-    justifyContent: 'right',
-    alignItems: 'center',
-    marginBottom: '25px',
-
-}
-
-
-const skillItemHeader = {
-    color: 'white',
-    fontWeight: '300',
-    // width: '75px'
-
 }
 
 const skillBarContainer = {
@@ -111,53 +96,6 @@ const Skills = () => {
     return (
         <div id="skills" style={container}>
             <h1 style={skillsHeader}>skills</h1>
-            {/* <div style={skillItemsContainer}>
-                <div style={skillItemContainer}>
-                    <div style={skillItemHeader}>UiPath</div>
-                    <div style={skillBarContainer}>
-                        <div style={skillBarBackround}>
-                        </div>
-                        <div style={skillBarForeground100}>
-                        </div>
-                    </div>
-                </div>
-                <div style={skillItemContainer}>
-                    <div style={skillItemHeader}>Workato</div>
-                    <div style={skillBarContainer}>
-                        <div style={skillBarBackround}>
-                        </div>
-                        <div style={skillBarForeground100}>
-                        </div>
-                    </div>
-                </div>
-                <div style={skillItemContainer}>
-                    <div style={skillItemHeader}>React JS</div>
-                    <div style={skillBarContainer}>
-                        <div style={skillBarBackround}>
-                        </div>
-                        <div style={skillBarForeground75}>
-                        </div>
-                    </div>
-                </div>
-                <div style={skillItemContainer}>
-                    <div style={skillItemHeader}>Python</div>
-                    <div style={skillBarContainer}>
-                        <div style={skillBarBackround}>
-                        </div>
-                        <div style={skillBarForeground50}>
-                        </div>
-                    </div>
-                </div>
-                <div style={skillItemContainer}>
-                    <div style={skillItemHeader}>AWS</div>
-                    <div style={skillBarContainer}>
-                        <div style={skillBarBackround}>
-                        </div>
-                        <div style={skillBarForeground25}>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
             <div style={skillItemsContainer}>
                 <div style={skillHeaders}>
