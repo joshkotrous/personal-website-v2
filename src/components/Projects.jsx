@@ -32,7 +32,8 @@ const project = {
     alignItems: 'center',
     height: '250px',
     width: '250px',
-    margin: '16px'
+    margin: '16px',
+    marginBottom: '12vh'
     
 }
 
@@ -79,7 +80,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div style={projectText}><a style={projectLink} href="http://www.joshkotrous.io">joshkotrous.io</a></div>
-                <div style={projectDescription}>my first developer portfolio website. Built with React, hosted on Amazon S3, and deployed with GitHub actions. </div>
+                <div style={projectDescription}>my first developer portfolio. Built with React, hosted on Amazon S3, and deployed with GitHub actions. </div>
             </div>
         </div>
 
