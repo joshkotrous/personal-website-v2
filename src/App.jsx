@@ -7,7 +7,10 @@ import Projects from "./components/Projects.jsx"
 import Contact from "./components/Contact.jsx"
 
 const appStyle = {
-  width: '100%'
+  width: '100%',
+  height: '100%',
+  overflow: 'hidden',
+  position: 'relative'
 };
 
 const appBackgroundStyle = {
@@ -24,12 +27,12 @@ function App() {
   return (
     <div style={appStyle}>
       <div style={appBackgroundStyle}></div>
-      <Navigation/>
-      <WelcomeHeader />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+        <Navigation/>
+        <WelcomeHeader />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
     </div>
   );
 }
