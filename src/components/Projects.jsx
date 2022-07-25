@@ -2,55 +2,87 @@ import React from 'react'
 import '../fonts.css'
 
 
+const container = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: '16px',
+    height: '100vh'
+}
 
 const projectsContainer = {
-    padding: '16px',
-    paddingTop: '32px',
-    color: '#DDADF7',
-    marginTop: '32px',
-    marginBottom: '25vh',
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    width: '100%',
+    marginTop: '10vh'
 }
 
 const projectsHeader = {
     fontFamily: 'Urbanist',
+    color: '#DDADF7',
+
 
 }
 
-const projectItemsContainer = {
+const project = {
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
+    height: '250px',
+    width: '250px',
+    margin: '16px'
+    
+}
+
+const projectFrameContainer = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '200px',
+    height: '200px',
+    padding: '16px',
+    background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
+
 
 }
 
-const projectItem ={
-    height: '150px',
-    width: '150px',
-    margin: '10px',
-    background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF'
-
+const projectFrame = {
+    border: 'none',
+    width: '540px',
+    height: '540px',
 }
+
+const projectLink = {
+    color: 'white',
+    textDecoration: 'none',
+    fontFamily: 'Urbanist',
+    fontSize: '24px',
+    fontWeight: '500'
+}
+
+const projectText = { width: '91%', textAlign: 'left', marginTop: '8px' }
+
+const projectDescription = { width: '91%', textAlign: 'left', marginTop: '8px', color: 'white', fontWeight: '300', fontSize: '16px'}
+
 
 const Projects = () => {
   return (
-    <div id="projects" style={projectsContainer}>
+    <div id="projects" style={container}>
         <h1 style={projectsHeader}>projects</h1>
-        <div style={projectItemsContainer}>
-            <div style={projectItem}>
-            </div>
-            <div style={projectItem}>
-            </div>
-            <div style={projectItem}>
-            </div>
-        </div>
-        <div style={projectItemsContainer}>
-            <div style={projectItem}>
-            </div>
-            <div style={projectItem}>
-            </div>
-            <div style={projectItem}>
+        <div  style={projectsContainer}>
+            <div style={project}>
+                <div style={projectFrameContainer}>
+                    <div style={{transform: 'scale(0.4)'}}>
+                        <iframe style={projectFrame} src="http://www.joshkotrous.io" />
+                    </div>
+                </div>
+                <div style={projectText}><a style={projectLink} href="http://www.joshkotrous.io">joshkotrous.io</a></div>
+                <div style={projectDescription}>my first developer portfolio website. Built with React, hosted on Amazon S3, and deployed with GitHub actions. </div>
             </div>
         </div>
+
     </div>
   )
 }
