@@ -43,7 +43,6 @@ const WelcomeHeader = () => {
             if (index === headers.length - 1) {
                 setIndex(0);
             }
-            console.log(index)
           }, 2000)
       
         return (() => clearInterval(interval)) 
