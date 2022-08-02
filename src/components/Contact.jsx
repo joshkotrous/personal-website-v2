@@ -102,7 +102,7 @@ const Contact = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        sendEmail("Inquiry from" + name, "Email: " + email + "\n\n" + note)
+        sendEmail("Inquiry from " + name, "Email: " + email + "\n\n" + note)
         setName('')
         setEmail('')
         setNote('')
