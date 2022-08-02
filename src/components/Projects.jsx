@@ -80,7 +80,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div style={projectText}><a style={projectLink} href="http://www.joshkotrous.io">joshkotrous.io</a></div>
-                <div style={projectDescription}>my first developer portfolio. Built with React, hosted on Amazon S3, and deployed with GitHub actions. </div>
+                <div style={projectDescription}>my first developer portfolio. Built with React and Python, hosted on Amazon S3, powered by AWS Lambda, and deployed with GitHub actions. </div>
             </div>
         </div>
 
