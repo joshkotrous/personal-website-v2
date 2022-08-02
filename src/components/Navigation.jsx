@@ -68,7 +68,6 @@ const Navigation = () => {
         marginRight: '16px'
       }
     }
-    console.log(showMenu)
   })
 
   return (

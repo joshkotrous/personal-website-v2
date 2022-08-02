@@ -1,16 +1,17 @@
-import React from 'react'
+import {React, useState} from 'react'
+import axios from 'axios'
 import '../fonts.css'
 import { ReactComponent as GitHub } from '../github.svg'
 import { ReactComponent as LinkedIn } from '../linkedin.svg'
 
 
 
-const container= {
+const container = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     height: '100vh',
-    padding: '16px', 
+    padding: '16px',
     color: '#DDADF7',
 }
 
@@ -79,25 +80,51 @@ const submitButton = {
 }
 
 const Contact = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [note, setNote] = useState('')
 
+    const sendEmail = ((subject, body) => {
+        const endpoint = 'https://rosuwl2qmr3lddcwrxigiwxpv40zsrul.lambda-url.us-east-1.on.aws/'
 
-  return (
-    <div id="contact" style={container}>
-        <h1 style={header}>contact</h1>
-        <div style={contactIcons}>
-            <a href='https://github.com/joshkotrous' rel="noreferrer" target='_blank'><GitHub style={contactIcon} /></a>
-            <a href='https://www.linkedin.com/in/joshkotrous/'  rel="noreferrer" target='_blank'><LinkedIn style={contactIcon}/></a>
+        axios.post(endpoint, {
+            subject: subject,
+            body: body
+        }
+        )
+            .then(function (response) {
+   
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    })
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        sendEmail("Inquiry from" + name, "Email: " + email + "\n\n" + note)
+        setName('')
+        setEmail('')
+        setNote('')
+    }
+
+    return (
+        <div id="contact" style={container}>
+            <h1 style={header}>contact</h1>
+            <div style={contactIcons}>
+                <a href='https://github.com/joshkotrous' rel="noreferrer" target='_blank'><GitHub style={contactIcon} /></a>
+                <a href='https://www.linkedin.com/in/joshkotrous/' rel="noreferrer" target='_blank'><LinkedIn style={contactIcon} /></a>
+            </div>
+            <form style={formContainer} onSubmit={handleSubmit}>
+                <input style={emailInput} type="text" name="name" placeholder='name' onChange={event => setName(event.target.value)} value={name}/>
+                <div style={separator}></div>
+                <input style={emailInput} type="email" name="email" placeholder='email' onChange={event => setEmail(event.target.value)} value={email}/>
+                <div style={separator}></div>
+                <textarea style={textInput} type="text" name="note" placeholder='leave a note' onChange={event => setNote(event.target.value)} value={note}/>
+                <button style={submitButton} type="submit" value="submit">submit</button>
+            </form>
         </div>
-        <form style={formContainer}>
-            <input style={emailInput}  type="text" name="name" placeholder='name' />
-            <div style={separator}></div>
-            <input style={emailInput}  type="email" name="email" placeholder='email' />
-            <div style={separator}></div>
-            <textarea style={textInput} type="text" name="note" placeholder='leave a note'/>
-            <input style={submitButton} type="submit" value="submit" />
-        </form>
-    </div>
-  )
+    )
 }
 
 export default Contact
