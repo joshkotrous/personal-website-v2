@@ -1,5 +1,5 @@
 import React from 'react'
-import '../fonts.css'
+import '../assets/fonts.css'
 
 
 const container = {

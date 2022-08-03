@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import '../fonts.css'
+import '../assets/fonts.css'
 
 const container = {
     display: 'flex',
