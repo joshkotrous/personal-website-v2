@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import '../fonts.css'
-import {ReactComponent as Hamburger} from '../hamburger.svg'
+import '../assets/fonts.css'
+import {ReactComponent as Hamburger} from '../assets/hamburger.svg'
 
 const navContainer = {
   position: 'fixed',

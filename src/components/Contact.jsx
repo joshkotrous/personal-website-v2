@@ -1,8 +1,8 @@
 import {React, useState} from 'react'
 import axios from 'axios'
-import '../fonts.css'
-import { ReactComponent as GitHub } from '../github.svg'
-import { ReactComponent as LinkedIn } from '../linkedin.svg'
+import '../assets/fonts.css'
+import { ReactComponent as GitHub } from '../assets/github.svg'
+import { ReactComponent as LinkedIn } from '../assets/linkedin.svg'
 
 
 
@@ -37,6 +37,7 @@ const formContainer = {
 }
 
 const emailInput = {
+    width: '100%',
     marginTop: '12px',
     background: 'none',
     border: 'none',
