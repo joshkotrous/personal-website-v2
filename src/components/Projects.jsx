@@ -53,6 +53,7 @@ const projectFrame = {
     border: 'none',
     width: '540px',
     height: '540px',
+    pointerEvents: 'none'
 }
 
 const projectLink = {
