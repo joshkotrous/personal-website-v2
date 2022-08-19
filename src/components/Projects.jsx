@@ -77,7 +77,7 @@ const Projects = () => {
             <div style={project}>
                 <div style={projectFrameContainer}>
                     <div style={{transform: 'scale(0.4)'}}>
-                        <iframe title="joshkotrous.io" scrolling="no" style={projectFrame} src="http://www.joshkotrous.io" />
+                        <iframe title="joshkotrous.io" scrolling="no" style={projectFrame} src="www.joshkotrous.io" />
                     </div>
                 </div>
                 <div style={projectText}><a style={projectLink} href="www.joshkotrous.io">joshkotrous.io</a></div>
