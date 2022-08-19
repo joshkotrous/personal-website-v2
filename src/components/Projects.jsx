@@ -77,10 +77,10 @@ const Projects = () => {
             <div style={project}>
                 <div style={projectFrameContainer}>
                     <div style={{transform: 'scale(0.4)'}}>
-                        <iframe title="joshkotrous.io" scrolling="no" style={projectFrame} src="www.joshkotrous.io" />
+                        <iframe title="joshkotrous.io" scrolling="no" style={projectFrame} src="https://joshkotrous.io" />
                     </div>
                 </div>
-                <div style={projectText}><a style={projectLink} href="www.joshkotrous.io">joshkotrous.io</a></div>
+                <div style={projectText}><a style={projectLink} href="https://joshkotrous.io">joshkotrous.io</a></div>
                 <div style={projectDescription}>My first developer portfolio. Built with React and Python, hosted on Amazon S3, powered by AWS Lambda, and deployed with GitHub actions. </div>
             </div>
         </div>
