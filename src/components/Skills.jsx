@@ -6,14 +6,17 @@ const container = {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    height: '100vh',
-    padding: '16px'
+    // height: '100vh',
+    padding: '30px 10%',
+    backgroundColor: "#4D4D4D"
+
 }
 
 const skillsHeader = {
     fontFamily: 'Urbanist',
+    fontSize: "2em",
     color: '#DDADF7',
-
+    marginTop: 0
 }
 
 const skillItemsContainer = {
@@ -53,14 +56,22 @@ const skillBarContainer = {
 }
 
 const skillBarBackround = {
-    width: '275px',
+    width: '50vw',
     height: '5px',
     borderRadius: '30px',
     background: 'white',
 
 }
 
-const skillBarForeground100 = {
+const skillBarForeground = (percentage) => ({
+    position: 'absolute',
+    width: `${(percentage * 50) / 100}vw`,
+    height: '5px',
+    background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
+    borderRadius: '30px'
+})
+
+/* const skillBarForeground100 = {
     position: 'absolute',
     width: '275px',
     height: '5px',
@@ -90,12 +101,12 @@ const skillBarForeground25 = {
     height: '5px',
     background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
     borderRadius: '30px'
-}
+} */
 
 const Skills = () => {
     return (
         <div id="skills" style={container}>
-            <h1 style={skillsHeader}>skills</h1>
+            <h2 style={skillsHeader}>skills</h2>
 
             <div style={skillItemsContainer}>
                 <div style={skillHeaders}>
@@ -108,27 +119,27 @@ const Skills = () => {
                 <div style={skillBars}>
                     <div style={skillBarContainer}>
                         <div style={skillBarBackround}></div>
-                        <div style={skillBarForeground100}>
+                        <div style={skillBarForeground(100)}>
                         </div>
                     </div> 
                     <div style={skillBarContainer}>
                         <div style={skillBarBackround}></div>
-                        <div style={skillBarForeground100}>
+                        <div style={skillBarForeground(100)}>
                         </div>
                     </div> 
                     <div style={skillBarContainer}>
                         <div style={skillBarBackround}></div>
-                        <div style={skillBarForeground75}>
+                        <div style={skillBarForeground(75)}>
                         </div>
                     </div> 
                     <div style={skillBarContainer}>
                         <div style={skillBarBackround}></div>
-                        <div style={skillBarForeground50}>
+                        <div style={skillBarForeground(50)}>
                         </div>
                     </div> 
                     <div style={skillBarContainer}>
                         <div style={skillBarBackround}></div>
-                        <div style={skillBarForeground25}>
+                        <div style={skillBarForeground(25)}>
                         </div>
                     </div> 
                 </div>

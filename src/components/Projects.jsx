@@ -6,8 +6,8 @@ const container = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '16px',
-    height: '100vh'
+    padding: '30px 10%',
+    // height: '100vh'
 }
 
 const projectsContainer = {
@@ -20,8 +20,9 @@ const projectsContainer = {
 
 const projectsHeader = {
     fontFamily: 'Urbanist',
+    fontSize: "2em",
     color: '#DDADF7',
-
+    marginTop: 0
 
 }
 
@@ -72,7 +73,7 @@ const projectDescription = { width: '91%', textAlign: 'left', marginTop: '8px', 
 const Projects = () => {
   return (
     <div id="projects" style={container}>
-        <h1 style={projectsHeader}>projects</h1>
+        <h2 style={projectsHeader}>projects</h2>
         <div  style={projectsContainer}>
             <div style={project}>
                 <div style={projectFrameContainer}>

@@ -4,16 +4,15 @@ import '../assets/fonts.css'
 
 const aboutHeader = {
     fontFamily: 'Urbanist',
-
+    marginTop: 0
 }
 
 const aboutContainer = {
-    height: '100vh',
+    // height: '100vh',
     display:'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '16px',
-    paddingTop: '32px',
+    padding: '30px 10%',
     color: '#DDADF7',
 }
 

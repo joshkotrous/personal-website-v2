@@ -10,14 +10,16 @@ const container = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: '100vh',
-    padding: '16px',
+    // height: '100vh',
+    padding: '30px 10%',
     color: '#DDADF7',
+    backgroundColor: "#4D4D4D"
 }
 
 const header = {
     fontFamily: 'Urbanist',
-
+    fontSize: "2em",
+    marginTop: 0
 }
 
 const contactIcons = {
@@ -49,6 +51,7 @@ const emailInput = {
 
 const separator = {
     marginTop: '0px',
+    marginBottom: '10px',
     height: '1px',
     background: 'linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF',
 }
@@ -77,7 +80,7 @@ const submitButton = {
     fontFamily: 'Urbanist',
     fontWeight: 'bold',
     fontSize: '18px',
-
+    marginTop: "20px"
 }
 
 const Contact = () => {
@@ -111,7 +114,7 @@ const Contact = () => {
 
     return (
         <div id="contact" style={container}>
-            <h1 style={header}>contact</h1>
+            <h2 style={header}>contact</h2>
             <div style={contactIcons}>
                 <a href='https://github.com/joshkotrous' rel="noreferrer" target='_blank'><GitHub style={contactIcon} /></a>
                 <a href='https://www.linkedin.com/in/joshkotrous/' rel="noreferrer" target='_blank'><LinkedIn style={contactIcon} /></a>
@@ -122,6 +125,7 @@ const Contact = () => {
                 <input style={emailInput} type="email" name="email" placeholder='email' onChange={event => setEmail(event.target.value)} value={email}/>
                 <div style={separator}></div>
                 <textarea style={textInput} type="text" name="note" placeholder='leave a note' onChange={event => setNote(event.target.value)} value={note}/>
+                <div style={separator}></div>
                 <button style={submitButton} type="submit" value="submit">submit</button>
             </form>
         </div>
