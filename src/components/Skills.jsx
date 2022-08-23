@@ -7,7 +7,7 @@ const container = {
     justifyContent: 'center',
     flexDirection: 'column',
     height: '100vh',
-    padding: '16px',
+    padding: '30px 10%',
     backgroundColor: "#4D4D4D"
 }
 

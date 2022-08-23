@@ -6,7 +6,7 @@ const container = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '16px',
+    padding: '30px 10%',
     height: '100vh'
 }
 

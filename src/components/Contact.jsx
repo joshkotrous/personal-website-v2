@@ -11,7 +11,7 @@ const container = {
     flexDirection: 'column',
     justifyContent: 'center',
     height: '100vh',
-    padding: '16px',
+    padding: '30px 10%',
     color: '#DDADF7',
     backgroundColor: "#4D4D4D"
 }

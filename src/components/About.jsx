@@ -12,7 +12,7 @@ const aboutContainer = {
     display:'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '16px',
+    padding: '30px 10%',
     paddingTop: '32px',
     color: '#DDADF7'
 }
