@@ -14,7 +14,7 @@ const aboutContainer = {
     justifyContent: 'center',
     padding: '16px',
     paddingTop: '32px',
-    color: '#DDADF7',
+    color: '#DDADF7'
 }
 
 const aboutText = {

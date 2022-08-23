@@ -13,6 +13,7 @@ const container = {
     height: '100vh',
     padding: '16px',
     color: '#DDADF7',
+    backgroundColor: "#4D4D4D"
 }
 
 const header = {

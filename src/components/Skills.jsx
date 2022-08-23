@@ -7,7 +7,8 @@ const container = {
     justifyContent: 'center',
     flexDirection: 'column',
     height: '100vh',
-    padding: '16px'
+    padding: '16px',
+    backgroundColor: "#4D4D4D"
 }
 
 const skillsHeader = {
