@@ -95,7 +95,7 @@ const skillBarForeground25 = {
 const Skills = () => {
     return (
         <div id="skills" style={container}>
-            <h1 style={skillsHeader}>skills</h1>
+            <h2 style={skillsHeader}>skills</h2>
 
             <div style={skillItemsContainer}>
                 <div style={skillHeaders}>

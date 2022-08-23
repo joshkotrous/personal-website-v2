@@ -27,7 +27,7 @@ const aboutText = {
 const About = () => {
   return (
     <div id="about" style={aboutContainer}>
-        <h1  style={aboutHeader}>about me</h1>
+        <h2  style={aboutHeader}>about me</h2>
         <p style={aboutText}>
             <span style={{fontWeight: '500'}}>My name is Josh Kotrous.</span>
             <br />

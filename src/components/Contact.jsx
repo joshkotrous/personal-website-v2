@@ -111,7 +111,7 @@ const Contact = () => {
 
     return (
         <div id="contact" style={container}>
-            <h1 style={header}>contact</h1>
+            <h2 style={header}>contact</h2>
             <div style={contactIcons}>
                 <a href='https://github.com/joshkotrous' rel="noreferrer" target='_blank'><GitHub style={contactIcon} /></a>
                 <a href='https://www.linkedin.com/in/joshkotrous/' rel="noreferrer" target='_blank'><LinkedIn style={contactIcon} /></a>

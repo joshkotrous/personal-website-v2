@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "./components/Navigation.jsx";
-import WelcomeHeader from "./components/WelcomeHeader.jsx"
+import HeroBanner from "./components/HeroBanner.jsx"
 import About from "./components/About.jsx"
 import Skills from "./components/Skills.jsx"
 import Projects from "./components/Projects.jsx"
@@ -29,7 +29,7 @@ function App() {
     <div style={appStyle}>
       <div style={appBackgroundStyle}></div>
         <Navigation/>
-        <WelcomeHeader />
+        <HeroBanner />
         <About />
         <Skills />
         <Projects />

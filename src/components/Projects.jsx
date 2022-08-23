@@ -72,7 +72,7 @@ const projectDescription = { width: '91%', textAlign: 'left', marginTop: '8px', 
 const Projects = () => {
   return (
     <div id="projects" style={container}>
-        <h1 style={projectsHeader}>projects</h1>
+        <h2 style={projectsHeader}>projects</h2>
         <div  style={projectsContainer}>
             <div style={project}>
                 <div style={projectFrameContainer}>
