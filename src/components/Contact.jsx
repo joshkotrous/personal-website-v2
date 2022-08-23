@@ -94,9 +94,6 @@ const Contact = () => {
             body: body
         }
         )
-            .then(function (response) {
-   
-            })
             .catch(function (error) {
                 console.log(error);
             });
