@@ -9,7 +9,7 @@ const container = {
     height: '100vh',
 }
 
-const welcomeHeaderContainer = {
+const heroBannerContainer = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,7 +31,7 @@ const cyclingText = {
 
 
 
-const WelcomeHeader = () => {
+const HeroBanner = () => {
     const [index, setIndex] = useState(0)
     const [vowels] = useState(["a", "e", "i", "o"])
     const [headers]  = useState(["software", "automation", "react", "uipath", "python", "aws", "solution architecture"])
@@ -54,7 +54,7 @@ const WelcomeHeader = () => {
 
   return (
       <div style={container}>
-          <div id="home" style={welcomeHeaderContainer}>
+          <div id="home" style={heroBannerContainer}>
               <div style={{ background: 'white', width: '1px', height: '50%', margin: '16px' }}></div>
               <div style={{ display: 'flex', flexDirection: 'column', }}>
                   <div style={{ background: 'white', width: '100%', height: '1px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '32px' }}></div>
@@ -70,4 +70,4 @@ const WelcomeHeader = () => {
   )
 }
 
-export default WelcomeHeader
+export default HeroBanner
