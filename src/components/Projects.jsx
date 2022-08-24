@@ -71,31 +71,41 @@ const projectDescription = {
 };
 
 const Projects = () => {
+  const projectsList = [
+    {
+      title: "joshkotrous.io",
+      url: "https://joshkotrous.io",
+      description:
+        "My first developer portfolio. Built with React and Python, hosted on Amazon S3, powered by AWS Lambda, and deployed with GitHub actions.",
+    },
+  ];
+
   return (
     <div id="projects" style={container}>
       <h2 style={projectsHeader}>projects</h2>
       <div style={projectsContainer}>
-        <div style={project}>
-          <div style={projectFrameContainer}>
-            <div style={{ transform: "scale(0.4)" }}>
-              <iframe
-                title="joshkotrous.io"
-                scrolling="no"
-                style={projectFrame}
-                src="https://joshkotrous.io"
-              />
+        {projectsList.map((item, index) => {
+          return (
+            <div key={index + "-project"} style={project}>
+              <div style={projectFrameContainer}>
+                <div style={{ transform: "scale(0.4)" }}>
+                  <iframe
+                    title={item.title}
+                    scrolling="no"
+                    style={projectFrame}
+                    src={item.url}
+                  />
+                </div>
+              </div>
+              <div style={projectText}>
+                <a style={projectLink} href={item.url}>
+                  {item.title}
+                </a>
+              </div>
+              <div style={projectDescription}>{item.description}</div>
             </div>
-          </div>
-          <div style={projectText}>
-            <a style={projectLink} href="https://joshkotrous.io">
-              joshkotrous.io
-            </a>
-          </div>
-          <div style={projectDescription}>
-            My first developer portfolio. Built with React and Python, hosted on
-            Amazon S3, powered by AWS Lambda, and deployed with GitHub actions.{" "}
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );
