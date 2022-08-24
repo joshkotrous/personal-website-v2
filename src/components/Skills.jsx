@@ -16,9 +16,7 @@ const skillsHeader = {
 };
 
 const skillItemsContainer = {
-  // padding: '4px'
   display: "flex",
-  // width: "50%",
   justifyContent: "center",
   alignItems: "center",
 };
