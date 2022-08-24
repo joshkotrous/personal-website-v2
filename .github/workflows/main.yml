@@ -44,7 +44,7 @@ jobs:
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
         run: |
-          echo "version=$steps.incrementMinorVersion.outputs.next-version" >> $GITHUB_ENV
+          echo "version=${{steps.incrementMinorVersion.outputs.next-version}}" >> $GITHUB_ENV
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         name: Increment Patch Version Number
@@ -56,7 +56,7 @@ jobs:
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         run: |
-          echo "version=$steps.incrementPatchVersion.outputs.next-version" >> $GITHUB_ENV
+          echo "version=${{steps.incrementPatchVersion.outputs.next-version}}" >> $GITHUB_ENV
 
       - run: echo "$VERSION"
 
