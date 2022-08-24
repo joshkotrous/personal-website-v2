@@ -27,7 +27,7 @@ jobs:
         run: |
           content=`cat package.json`
           echo "::set-output name=versionNumber::$fromJson(content).version"
-          echo "${fromJson(content).version}"
+          echo ${{ steps.getVersionNumber.outputs.versionNumber }}
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
         name: Increment Minor Version Number
