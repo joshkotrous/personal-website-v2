@@ -24,7 +24,7 @@ jobs:
           content=`cat package.json`
           echo "::set-output name=versionNumber::$fromJson(content).version"
 
-      - if: startsWith(github.head_ref, 'feature/')
+      - if: startsWith(github.head_ref, 'pipeline-test')
         name: Increment Minor Version Number
         id: incrementVersionNumber1
         uses: christian-draeger/increment-semantic-version@1.0.2
