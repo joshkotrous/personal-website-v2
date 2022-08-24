@@ -36,26 +36,30 @@ jobs:
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
         name: Increment Minor Version Number
-        id: incrementVersionNumber1
+        id: incrementMinorVersion
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "feature"
+        env:
+          Version: ${{ steps.incrementMinorVersion.outputs.next-version }}
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         name: Increment Patch Version Number
-        id: incrementVersionNumber2
+        id: incrementPatchVersion
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "bug"
+        env:
+          Version: ${{ steps.incrementPatchVersion.outputs.next-version }}
 
       - name: Update Version Number
         uses: jossef/action-set-json-field@v2
         with:
           file: package.json
           field: version
-          value: ${{ steps.incrementVersionNumber1.outputs.next-version }}
+          value: ${{ env.Version }}
 
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
