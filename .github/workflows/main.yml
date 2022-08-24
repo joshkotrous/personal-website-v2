@@ -7,6 +7,9 @@ on:
 
 jobs:
   Build_Deploy:
+    env:
+      VERSION: ""
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,8 +44,7 @@ jobs:
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "feature"
-        env:
-          Version: ${{ steps.incrementMinorVersion.outputs.next-version }}
+        run: echo "::set-env name=VERSION::$steps.incrementMinorVersion.outputs.next-version"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         name: Increment Patch Version Number
@@ -51,8 +53,7 @@ jobs:
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "bug"
-        env:
-          Version: ${{ steps.incrementPatchVersion.outputs.next-version }}
+        run: echo "::set-env name=VERSION::$steps.incrementPatchVersion.outputs.next-version"
 
       - run: echo "$Version"
 
@@ -61,7 +62,7 @@ jobs:
         with:
           file: package.json
           field: version
-          value: "$Version"
+          value: ${{ env.Version }}
 
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
