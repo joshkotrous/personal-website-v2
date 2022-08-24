@@ -37,7 +37,7 @@ jobs:
       - run: |
           echo "${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}"
 
-      - if: startsWith('${{ steps.extract_branch.outputs.branch }', 'pipeline-test')
+      - if: startsWith('${{ steps.extract_branch.outputs.branch }}', 'pipeline-test')
         name: Increment Minor Version Number
         id: incrementMinorVersion
         uses: christian-draeger/increment-semantic-version@1.0.2
@@ -49,7 +49,7 @@ jobs:
         run: |
           echo "version=${{steps.incrementMinorVersion.outputs.next-version}}" >> $GITHUB_ENV
 
-      - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
+      - if: startsWith('${{ steps.extract_branch.outputs.branch }}', 'bug/')
         name: Increment Patch Version Number
         id: incrementPatchVersion
         uses: christian-draeger/increment-semantic-version@1.0.2
