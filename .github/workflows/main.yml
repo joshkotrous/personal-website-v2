@@ -59,7 +59,7 @@ jobs:
         with:
           file: package.json
           field: version
-          value: ${{ env.Version }}
+          value: $Version
 
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
