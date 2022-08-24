@@ -85,6 +85,12 @@ jobs:
           committer_name: GitHub Actions
           committer_email: actions@github.com
 
+      - name: Create Github Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.version }}
+          generateReleaseNotes: true
+
       # - name: Build React App
       #   run: npm install && npm run build
 
