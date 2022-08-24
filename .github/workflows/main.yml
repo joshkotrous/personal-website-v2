@@ -40,7 +40,7 @@ jobs:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "feature"
 
-      - if: startsWith(steps.extract_branch.outputs.branch, 'pipeline-test')
+      - if: startsWith(steps.extract_branch.outputs.branch, 'feature/')
         name: Update Version Number Variable
         run: |
           echo "version=${{steps.incrementMinorVersion.outputs.next-version}}" >> $GITHUB_ENV
