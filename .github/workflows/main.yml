@@ -22,7 +22,6 @@ jobs:
       - name: Extract branch name
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-          echo "${{ steps.extract_branch.outputs.branch }}"
         id: extract_branch
 
       - id: getVersionNumber
@@ -32,7 +31,6 @@ jobs:
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
           echo "::set-output name=packageJson::$content"
-          echo "${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}"
 
       - if: startsWith(steps.extract_branch.outputs.branch, 'pipeline-test')
         name: Increment Minor Version Number
