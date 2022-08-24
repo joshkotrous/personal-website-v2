@@ -19,15 +19,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Get Version Number
-        id: getVersionNumber
+      - id: getVersionNumber
         run: |
           content=`cat package.json`
           echo "::set-output name=versionNumber::${{ fromJson(content).version }}"
 
       - if: ${{ startsWith(${{GITHUB_REF#refs/heads/}}, "feature/")}}
         name: Increment Minor Version Number
-        id: incrementVersionNumber
+        id: incrementVersionNumber1
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
           current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
@@ -35,7 +34,7 @@ jobs:
 
       - if: ${{ startsWith(${{GITHUB_REF#refs/heads/}}, "bug/")}}
         name: Increment Patch Version Number
-        id: incrementVersionNumber
+        id: incrementVersionNumber2
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
           current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
@@ -46,7 +45,7 @@ jobs:
         with:
           file: package.json
           field: version
-          value: ${{ steps.incrementVersionNumber.outputs.next-version }}
+          value: ${{ steps.incrementVersionNumber1.outputs.next-version }}
 
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
