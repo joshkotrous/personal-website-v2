@@ -23,9 +23,9 @@ jobs:
         run: |
           content=`cat package.json`
           echo "::set-output name=versionNumber::$fromJson(content).version"
-          echo "${{github.head_ref}}"
+          echo "${GITHUB_REF#refs/heads/}"
 
-      - if: startsWith(github.head_ref, 'pipeline-test')
+      - if: startsWith(${GITHUB_REF#refs/heads/}, 'pipeline-test')
         name: Increment Minor Version Number
         id: incrementVersionNumber1
         uses: christian-draeger/increment-semantic-version@1.0.2
@@ -33,7 +33,7 @@ jobs:
           current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
           version-fragment: "feature"
 
-      - if: startsWith(github.head_ref, 'bug/')
+      - if: startsWith(${GITHUB_REF#refs/heads/}, 'bug/')
         name: Increment Patch Version Number
         id: incrementVersionNumber2
         uses: christian-draeger/increment-semantic-version@1.0.2
