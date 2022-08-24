@@ -19,13 +19,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Extract branch name
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - id: getVersionNumber
         run: |
           content=`cat package.json`
           echo "::set-output name=versionNumber::$fromJson(content).version"
-          echo "${GITHUB_REF#refs/heads/}"
 
-      - if: {{ ${GITHUB_REF#refs/heads/} }} == pipeline-test
+      - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
         name: Increment Minor Version Number
         id: incrementVersionNumber1
         uses: christian-draeger/increment-semantic-version@1.0.2
@@ -33,7 +36,7 @@ jobs:
           current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
           version-fragment: "feature"
 
-      - if: startsWith('${GITHUB_REF#refs/heads/}', 'bug/')
+      - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         name: Increment Patch Version Number
         id: incrementVersionNumber2
         uses: christian-draeger/increment-semantic-version@1.0.2
