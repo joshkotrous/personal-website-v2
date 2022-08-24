@@ -25,7 +25,7 @@ jobs:
           echo "::set-output name=versionNumber::$fromJson(content).version"
           echo "${GITHUB_REF#refs/heads/}"
 
-      - if: ${GITHUB_REF#refs/heads/} == 'pipeline-test'
+      - if: {{ ${GITHUB_REF#refs/heads/} }} == pipeline-test
         name: Increment Minor Version Number
         id: incrementVersionNumber1
         uses: christian-draeger/increment-semantic-version@1.0.2
