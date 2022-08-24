@@ -3,34 +3,69 @@ name: s3-depl
 on:
   push:
     branches:
-      - master
+      - pipeline-test
 
 jobs:
   Build_Deploy:
     runs-on: ubuntu-latest
     steps:
-    
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-          
-      - name: Build React App
-        run: npm install && npm run build
-        
-      - name: Deploy app build to S3 bucket
-        run: aws s3 sync ./build/ s3://joshkotrous.io --delete
-        
-      - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-          PATHS: "/*"
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Get Version Number
+        id: getVersionNumber
+        run: |
+          content=`cat package.json`
+          echo "::set-output name=versionNumber::${{ fromJson(content).version }}"
+
+      - if: ${{ startsWith(${{GITHUB_REF#refs/heads/}}, "feature/")}}
+        name: Increment Minor Version Number
+        id: incrementVersionNumber
+        uses: christian-draeger/increment-semantic-version@1.0.2
+        with:
+          current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
+          version-fragment: "feature"
+
+      - if: ${{ startsWith(${{GITHUB_REF#refs/heads/}}, "bug/")}}
+        name: Increment Patch Version Number
+        id: incrementVersionNumber
+        uses: christian-draeger/increment-semantic-version@1.0.2
+        with:
+          current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
+          version-fragment: "bug"
+
+      - name: Update Version Number
+        uses: jossef/action-set-json-field@v2
+        with:
+          file: package.json
+          field: version
+          value: ${{ steps.incrementVersionNumber.outputs.next-version }}
+
+      - name: Commit New Version
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: Show GitHub Actions logo
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+
+      # - name: Build React App
+      #   run: npm install && npm run build
+
+      # - name: Deploy app build to S3 bucket
+      #   run: aws s3 sync ./build/ s3://joshkotrous.io --delete
+
+      # - name: Invalidate CloudFront
+      #   uses: chetan/invalidate-cloudfront-action@v2
+      #   env:
+      #     DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+      #     PATHS: "/*"
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
