@@ -54,12 +54,14 @@ jobs:
         env:
           Version: ${{ steps.incrementPatchVersion.outputs.next-version }}
 
+      - run: echo "$Version"
+
       - name: Update Version Number
         uses: jossef/action-set-json-field@v2
         with:
           file: package.json
           field: version
-          value: ${{ env.Version }}
+          value: "$Version"
 
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
