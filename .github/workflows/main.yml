@@ -28,7 +28,7 @@ jobs:
           content=`cat package.json`
           echo "::set-output name=versionNumber::$fromJson(content).version"
           echo "$content"
-          echo "$fromJson(content)"
+          echo "$fromJson(content).version"
           echo "${{ steps.getVersionNumber.outputs.versionNumber }}"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
