@@ -7,9 +7,6 @@ on:
 
 jobs:
   Build_Deploy:
-    env:
-      VERSION: ""
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,7 +43,8 @@ jobs:
           version-fragment: "feature"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
-        run: echo "::set-env name=VERSION::$steps.incrementMinorVersion.outputs.next-version"
+        run: |
+          echo "version=$steps.incrementMinorVersion.outputs.next-version" >> $GITHUB_ENV
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         name: Increment Patch Version Number
@@ -57,7 +55,8 @@ jobs:
           version-fragment: "bug"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
-        run: echo "::set-env name=VERSION::$steps.incrementPatchVersion.outputs.next-version"
+        run: |
+          echo "version=$steps.incrementPatchVersion.outputs.next-version" >> $GITHUB_ENV
 
       - run: echo "$VERSION"
 
@@ -66,7 +65,7 @@ jobs:
         with:
           file: package.json
           field: version
-          value: ${{ env.Version }}
+          value: ${{ env.version }}
 
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
