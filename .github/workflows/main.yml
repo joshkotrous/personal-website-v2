@@ -38,7 +38,7 @@ jobs:
           echo "${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}"
 
       - run: |
-          echo "${{ startsWith(${{ steps.extract_branch.outputs.branch }}', 'pipeline-test') }}"
+          echo startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}', 'pipeline-test')
         name: Increment Minor Version Number
