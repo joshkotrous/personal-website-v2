@@ -37,7 +37,10 @@ jobs:
       - run: |
           echo "${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}"
 
-      - if: startsWith('${{ steps.extract_branch.outputs.branch }}', 'pipeline-test')
+      - run: |
+          echo "${{ startsWith(${{ steps.extract_branch.outputs.branch }}', 'pipeline-test') }}"
+
+      - if: startsWith(${{ steps.extract_branch.outputs.branch }}', 'pipeline-test')
         name: Increment Minor Version Number
         id: incrementMinorVersion
         uses: christian-draeger/increment-semantic-version@1.0.2
