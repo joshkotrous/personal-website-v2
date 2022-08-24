@@ -23,6 +23,7 @@ jobs:
         run: |
           content=`cat package.json`
           echo "::set-output name=versionNumber::$fromJson(content).version"
+          echo "${{github.head_ref}}"
 
       - if: startsWith(github.head_ref, 'pipeline-test')
         name: Increment Minor Version Number
