@@ -20,11 +20,10 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Extract branch name
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-
-      - run: |
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
           echo "${{ steps.extract_branch.outputs.branch }}"
+        id: extract_branch
 
       - id: getVersionNumber
         run: |
@@ -33,8 +32,6 @@ jobs:
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
           echo "::set-output name=packageJson::$content"
-
-      - run: |
           echo "${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}"
 
       - if: startsWith(steps.extract_branch.outputs.branch, 'pipeline-test')
@@ -46,6 +43,7 @@ jobs:
           version-fragment: "feature"
 
       - if: startsWith(steps.extract_branch.outputs.branch, 'pipeline-test')
+        name: Update Version Number Variable
         run: |
           echo "version=${{steps.incrementMinorVersion.outputs.next-version}}" >> $GITHUB_ENV
 
@@ -58,6 +56,7 @@ jobs:
           version-fragment: "bug"
 
       - if: startsWith(steps.extract_branch.outputs.branch, 'bug/')
+        name: Update Version Number Variable
         run: |
           echo "version=${{steps.incrementPatchVersion.outputs.next-version}}" >> $GITHUB_ENV
 
