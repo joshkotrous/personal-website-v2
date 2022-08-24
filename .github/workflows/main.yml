@@ -26,17 +26,20 @@ jobs:
       - id: getVersionNumber
         run: |
           content=`cat package.json`
-          echo "::set-output name=versionNumber::$fromJson(content).version"
-          echo "$content"
-          echo "$fromJson(content).version"
-          echo "${{ steps.getVersionNumber.outputs.versionNumber }}"
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=packageJson::$content"
+
+      - run: |
+          echo "${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
         name: Increment Minor Version Number
         id: incrementVersionNumber1
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
-          current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
+          current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "feature"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
@@ -44,7 +47,7 @@ jobs:
         id: incrementVersionNumber2
         uses: christian-draeger/increment-semantic-version@1.0.2
         with:
-          current-version: ${{ steps.getVersionNumber.outputs.versionNumber }}
+          current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "bug"
 
       - name: Update Version Number
