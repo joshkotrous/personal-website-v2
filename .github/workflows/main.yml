@@ -44,6 +44,8 @@ jobs:
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "feature"
+
+      - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'pipeline-test')
         run: echo "::set-env name=VERSION::$steps.incrementMinorVersion.outputs.next-version"
 
       - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
@@ -53,9 +55,11 @@ jobs:
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "bug"
+
+      - if: startsWith(${{ steps.extract_branch.outputs.branch }}, 'bug/')
         run: echo "::set-env name=VERSION::$steps.incrementPatchVersion.outputs.next-version"
 
-      - run: echo "$Version"
+      - run: echo "$VERSION"
 
       - name: Update Version Number
         uses: jossef/action-set-json-field@v2
