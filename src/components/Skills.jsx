@@ -70,38 +70,51 @@ const skillBarForeground = (percentage) => ({
 });
 
 const Skills = () => {
+  const skillList = [
+    {
+      header: "UiPath",
+      level: "100",
+    },
+    {
+      header: "Workato",
+      level: "100",
+    },
+    {
+      header: "React",
+      level: "75",
+    },
+    {
+      header: "Python",
+      level: "50",
+    },
+    {
+      header: "AWS",
+      level: "25",
+    },
+  ];
+
   return (
     <div id="skills" style={container}>
       <h2 style={skillsHeader}>skills</h2>
       <div style={skillItemsContainer}>
         <div style={skillHeaders}>
-          <div style={skillHeader}>UiPath</div>
-          <div style={skillHeader}>Workato</div>
-          <div style={skillHeader}>React</div>
-          <div style={skillHeader}>Python</div>
-          <div style={skillHeader}>AWS</div>
+          {skillList.map((item, index) => {
+            return (
+              <div key={index + "-header"} style={skillHeader}>
+                {item.header}
+              </div>
+            );
+          })}
         </div>
         <div style={skillBars}>
-          <div style={skillBarContainer}>
-            <div style={skillBarBackround}></div>
-            <div style={skillBarForeground(100)}></div>
-          </div>
-          <div style={skillBarContainer}>
-            <div style={skillBarBackround}></div>
-            <div style={skillBarForeground(100)}></div>
-          </div>
-          <div style={skillBarContainer}>
-            <div style={skillBarBackround}></div>
-            <div style={skillBarForeground(75)}></div>
-          </div>
-          <div style={skillBarContainer}>
-            <div style={skillBarBackround}></div>
-            <div style={skillBarForeground(50)}></div>
-          </div>
-          <div style={skillBarContainer}>
-            <div style={skillBarBackround}></div>
-            <div style={skillBarForeground(25)}></div>
-          </div>
+          {skillList.map((item, index) => {
+            return (
+              <div key={index + "-skill"} style={skillBarContainer}>
+                <div style={skillBarBackround}></div>
+                <div style={skillBarForeground(item.level)}></div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
