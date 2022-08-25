@@ -10,12 +10,12 @@ const container = {
   justifyContent: "center",
   height: "100vh",
   padding: "30px 10%",
-  color: "#DDADF7",
   backgroundColor: "#4D4D4D",
 };
 
 const header = {
   fontFamily: "Urbanist",
+  color: "#DDADF7",
 };
 
 const contactIcons = {};

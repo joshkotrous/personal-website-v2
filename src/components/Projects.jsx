@@ -5,8 +5,8 @@ const container = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  padding: "30px 10%",
   height: "100vh",
+  padding: "30px 10%",
 };
 
 const projectsContainer = {
