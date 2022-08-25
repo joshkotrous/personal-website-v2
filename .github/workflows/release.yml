@@ -28,17 +28,17 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           echo "::set-output name=packageJson::$content"
 
-      - name: Create Github Release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
-          generateReleaseNotes: true
-
       - name: Build React App
         run: npm install && npm run build
 
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./build/ s3://joshkotrous.io --delete
+
+      - name: Create Github Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
+          generateReleaseNotes: true
 
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
