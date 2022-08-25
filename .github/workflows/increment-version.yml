@@ -1,22 +1,15 @@
-name: versioning
+name: increment-version
 
 on:
   pull_request:
     types: [opened]
     branches:
-      - test-versioning
+      - master
 
 jobs:
-  Build_Deploy:
+  Increment_Version:
     runs-on: ubuntu-latest
     steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
       - name: Extract branch name
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF})"
@@ -27,13 +20,8 @@ jobs:
         with:
           ref: ${{steps.extract_branch.outputs.branch}}
 
-      - run: |
-          echo ${{steps.extract_branch.outputs.branch}}
-
-      - run: |
-          echo ${GITHUB_HEAD_REF}
-
-      - id: getVersionNumber
+      - name: Get Version Number
+        id: getVersionNumber
         run: |
           content=`cat package.json`
           content="${content//'%'/'%25'}"
