@@ -5,6 +5,7 @@ import About from "./components/About.jsx";
 import Skills from "./components/Skills.jsx";
 import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
+import VersionNumber from "./components/VersionNumber.jsx";
 import "./assets/global.css";
 
 const appStyle = {
@@ -32,6 +33,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <VersionNumber />
     </div>
   );
 }
