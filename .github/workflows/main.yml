@@ -41,7 +41,7 @@ jobs:
           version-fragment: "feature"
 
       - run: |
-          echo "$GITHUB_BASE_REF"
+          echo "${GITHUB_BASE_REF}"
 
       - if: startsWith(steps.extract_branch.outputs.branch, 'feature/')
         name: Update Version Number Variable
