@@ -10,11 +10,6 @@ jobs:
   Build_Deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: ${GITHUB_HEAD_REF}
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -26,6 +21,11 @@ jobs:
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF})"
         id: extract_branch
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{steps.extract_branch.outputs.branch}}
 
       - run: |
           echo ${{steps.extract_branch.outputs.branch}}
