@@ -1,0 +1,13 @@
+name: increment-version
+
+on:
+  pull_request:
+    types: [synchronize]
+    branches:
+      - master
+
+jobs:
+  Increment_Version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "Branch was modified"'
