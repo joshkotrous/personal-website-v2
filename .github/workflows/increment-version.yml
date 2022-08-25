@@ -20,6 +20,9 @@ jobs:
         with:
           ref: ${{steps.extract_branch.outputs.branch}}
 
+      - name: Build React App
+        run: npm install && npm run build
+
       - name: Get Version Number
         id: getVersionNumber
         run: |
