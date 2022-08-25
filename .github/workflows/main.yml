@@ -28,7 +28,7 @@ jobs:
           echo ${{steps.extract_branch.outputs.branch}}
 
       - run: |
-          echo ${GITHUB_BASE_REF}
+          echo ${GITHUB_HEAD_REF}
 
       - id: getVersionNumber
         run: |
