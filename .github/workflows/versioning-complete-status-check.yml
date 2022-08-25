@@ -7,7 +7,7 @@ on:
       - completed
 
 jobs:
-  Increment_Version:
+  Versioning_Complete:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Versioning Complete"
