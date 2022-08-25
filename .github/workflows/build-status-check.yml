@@ -1,0 +1,17 @@
+name: build-status-check
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - master
+
+jobs:
+  Increment_Version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build React App
+        run: npm install && npm run build
