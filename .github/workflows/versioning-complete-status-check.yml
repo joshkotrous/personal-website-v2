@@ -1,0 +1,13 @@
+name: versioning-complete-status-check
+
+on:
+  workflow_run:
+    workflows: ["increment-version"]
+    types:
+      - completed
+
+jobs:
+  Increment_Version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Versioning Complete"
