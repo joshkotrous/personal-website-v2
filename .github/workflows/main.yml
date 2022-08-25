@@ -21,8 +21,11 @@ jobs:
 
       - name: Extract branch name
         run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "##[set-output name=branch;]$(echo ${GITHUB_BASE_REF#refs/heads/})"
         id: extract_branch
+
+      - run: |
+          echo ${{steps.extract_branch.outputs.branch}}
 
       - id: getVersionNumber
         run: |
@@ -39,9 +42,6 @@ jobs:
         with:
           current-version: ${{fromJson(steps.getVersionNumber.outputs.packageJson).version}}
           version-fragment: "feature"
-
-      - run: |
-          echo "${GITHUB_BASE_REF}"
 
       - if: startsWith(steps.extract_branch.outputs.branch, 'feature/')
         name: Update Version Number Variable
