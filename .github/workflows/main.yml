@@ -21,11 +21,14 @@ jobs:
 
       - name: Extract branch name
         run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_BASE_REF#refs/heads/})"
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
       - run: |
           echo ${{steps.extract_branch.outputs.branch}}
+
+      - run: |
+          echo ${GITHUB_BASE_REF}
 
       - id: getVersionNumber
         run: |
