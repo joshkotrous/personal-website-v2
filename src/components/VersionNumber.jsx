@@ -11,7 +11,9 @@ const versionStyle = {
   textAlign: "right",
   padding: "16px",
   fontFamily: "Urbanist",
+  fontWeight: "bold",
   color: "white",
+  fontSize: "12px",
 };
 
 const VersionNumber = () => {
