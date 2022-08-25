@@ -78,6 +78,6 @@ jobs:
       - name: Commit New Version
         uses: EndBug/add-and-commit@v9
         with:
-          message: Show GitHub Actions logo
+          message: Commit from GitHub Actions - updated version number to ${{ env.version }}
           committer_name: GitHub Actions
           committer_email: actions@github.com
