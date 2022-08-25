@@ -10,4 +10,10 @@ jobs:
   Increment_Version:
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "Branch was modified"'
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{steps.extract_branch.outputs.branch}}
+
+      - name: Build React App
+        run: npm install && npm run build
