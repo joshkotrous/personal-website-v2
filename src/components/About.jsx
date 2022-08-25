@@ -1,31 +1,12 @@
 import { React } from "react";
 import "../assets/fonts.css";
-import "../assets/Section.css";
-
-// const header = {
-//   fontFamily: "Urbanist",
-//   color: "#DDADF7",
-// };
-
-// const container = {
-//   display: "flex",
-//   flexDirection: "column",
-//   justifyContent: "center",
-//   height: "100vh",
-//   padding: "30px 10%",
-// };
-
-// const aboutText = {
-//   fontWeight: "300",
-//   color: "white",
-//   fontFamily: "Urbanist",
-// };
+import "../assets/section.css";
 
 const About = () => {
   return (
     <div id="about" className="sectionContainer">
-      <h2 className="sectionHeader">about me</h2>
-      <p className="text">
+      <h2>about me</h2>
+      <p>
         <span style={{ fontWeight: "500" }}>My name is Josh Kotrous.</span>
         <br />
         <br />

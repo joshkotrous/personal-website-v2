@@ -1,18 +1,18 @@
 .sectionContainer {
-  display: "flex";
-  flex-direction: "column";
-  justify-content: "center";
-  height: "100vh";
-  padding: "30px 10%";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 30px 10%;
 }
 
-.sectionHeader {
-  font-family: "Urbanist";
-  color: "#DDADF7";
+.sectionContainer > h2 {
+  font-family: Urbanist;
+  color: #ddadf7;
 }
 
-.text {
-  font-family: "Urbanist";
-  font-weight: "300";
-  color: "white";
+.sectionContainer > p {
+  font-family: Urbanist;
+  font-weight: 300;
+  color: white;
 }
