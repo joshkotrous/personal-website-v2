@@ -1,31 +1,21 @@
 import { React } from "react";
+import PropTypes from "prop-types";
 import "../assets/fonts.css";
+import "../assets/section.css";
 
-const aboutHeader = {
-  fontFamily: "Urbanist",
-};
+const About = (props) => {
+  About.propTypes = {
+    backgroundColor: PropTypes.string,
+  };
 
-const aboutContainer = {
-  height: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  padding: "30px 10%",
-  paddingTop: "32px",
-  color: "#DDADF7",
-};
-
-const aboutText = {
-  fontWeight: "300",
-  color: "white",
-  fontFamily: "Urbanist",
-};
-
-const About = () => {
   return (
-    <div id="about" style={aboutContainer}>
-      <h2 style={aboutHeader}>about me</h2>
-      <p style={aboutText}>
+    <div
+      id="about"
+      className="sectionContainer"
+      style={{ backgroundColor: props.backgroundColor }}
+    >
+      <h2>about me</h2>
+      <p>
         <span style={{ fontWeight: "500" }}>My name is Josh Kotrous.</span>
         <br />
         <br />

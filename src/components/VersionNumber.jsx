@@ -1,22 +1,10 @@
 import React from "react";
 import packageJSON from "../../package.json";
 import "../assets/fonts.css";
-
-const versionStyle = {
-  position: "fixed",
-  zIndex: "9999",
-  width: "100%",
-  bottom: "0",
-  right: "0",
-  textAlign: "right",
-  padding: "16px",
-  fontFamily: "Urbanist",
-  color: "white",
-  fontSize: "12px",
-};
+import "../assets/versionnumber.css";
 
 const VersionNumber = () => {
-  return <div style={versionStyle}>v{packageJSON["version"]}</div>;
+  return <div className="versionNumber">v{packageJSON["version"]}</div>;
 };
 
 export default VersionNumber;

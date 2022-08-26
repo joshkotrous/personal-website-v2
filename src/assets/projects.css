@@ -1,0 +1,55 @@
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  margin: 16px;
+  margin-bottom: 12vh;
+}
+
+.projectFrameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  padding: 16px;
+  background: linear-gradient(
+      225deg,
+      rgba(255, 92, 0, 0.44) 26.04%,
+      rgba(143, 0, 255, 0.32) 100%
+    ),
+    #ffffff;
+}
+
+.projectFrame {
+  border: none;
+  width: 540px;
+  height: 540px;
+  pointer-events: none;
+}
+
+.projectText {
+  width: 91%;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.projectText > a {
+  color: white;
+  text-decoration: none;
+  font-family: Urbanist;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.projectDescription {
+  width: 91%;
+  text-align: left;
+  margin-top: 8px;
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+}

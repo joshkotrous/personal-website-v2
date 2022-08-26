@@ -1,0 +1,26 @@
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 30px 10%;
+}
+
+.sectionContainer > h2 {
+  font-family: Urbanist;
+  color: #ddadf7;
+}
+
+.sectionContainer > p {
+  font-family: Urbanist;
+  font-weight: 300;
+  color: white;
+}
+
+.sectionContentContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 7vh;
+}
