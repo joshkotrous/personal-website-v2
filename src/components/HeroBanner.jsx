@@ -1,33 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/fonts.css";
-
-const container = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  height: "100vh",
-};
-
-const heroBannerContainer = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  height: "400px",
-  background:
-    "linear-gradient(225deg, rgba(255, 92, 0, 0.44) 26.04%, rgba(143, 0, 255, 0.32) 100%), #FFFFFF",
-};
-
-const headerTextContainer = {
-  width: "75vw",
-  color: "white",
-  fontFamily: "Urbanist",
-};
-
-const cyclingText = {
-  fontWeight: "bold",
-};
+import "../assets/herobanner.css";
 
 const HeroBanner = () => {
   const [index, setIndex] = useState(0);
@@ -56,54 +29,22 @@ const HeroBanner = () => {
   });
 
   return (
-    <div style={container}>
-      <div id="home" style={heroBannerContainer}>
-        <div
-          style={{
-            background: "white",
-            width: "1px",
-            height: "50%",
-            margin: "16px",
-          }}
-        ></div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              background: "white",
-              width: "100%",
-              height: "1px",
-              marginLeft: "auto",
-              marginRight: "auto",
-              marginBottom: "32px",
-            }}
-          ></div>
-          <div style={headerTextContainer}>
-            <h1 style={{ fontWeight: "300" }}>
+    <div className="container">
+      <div id="home" className="heroBannerContainer">
+        <div className="verticalLine"></div>
+        <div className="centralContainer">
+          <div className="horizontalLineTop"></div>
+          <div className="headerTextContainer">
+            <h1>
               {vowels.includes(title.substring(0, 1)) ? "an" : "a"}
               <br></br>
-              <span style={cyclingText}>{title}</span>
+              <span className="cyclingText">{title}</span>
               <br></br> enthusiast
             </h1>
           </div>
-          <div
-            style={{
-              background: "white",
-              width: "100%",
-              height: "1px",
-              marginLeft: "auto",
-              marginRight: "auto",
-              marginTop: "32px",
-            }}
-          ></div>
+          <div className="horizontalLineBottom"></div>
         </div>
-        <div
-          style={{
-            background: "white",
-            width: "1px",
-            height: "50%",
-            margin: "16px",
-          }}
-        ></div>
+        <div className="verticalLine"></div>
       </div>
     </div>
   );

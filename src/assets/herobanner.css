@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.heroBannerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(
+      225deg,
+      rgba(255, 92, 0, 0.44) 26.04%,
+      rgba(143, 0, 255, 0.32) 100%
+    ),
+    #ffffff;
+}
+
+.headerTextContainer {
+  width: 75vw;
+  color: white;
+  font-family: Urbanist;
+}
+
+.cyclingText {
+  font-weight: bold;
+}
+
+.verticalLine {
+  background: white;
+  width: 1px;
+  height: 50%;
+  margin: 16px;
+}
+
+.centralContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTextContainer > h1 {
+  font-weight: 300;
+}
+
+.horizontalLineTop {
+  background: white;
+  width: 100%;
+  height: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+.horizontalLineBottom {
+  background: white;
+  width: 100%;
+  height: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+}
