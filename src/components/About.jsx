@@ -1,10 +1,19 @@
 import { React } from "react";
+import PropTypes from "prop-types";
 import "../assets/fonts.css";
 import "../assets/section.css";
 
-const About = () => {
+const About = (props) => {
+  About.propTypes = {
+    backgroundColor: PropTypes.string,
+  };
+
   return (
-    <div id="about" className="sectionContainer">
+    <div
+      id="about"
+      className="sectionContainer"
+      style={{ backgroundColor: props.backgroundColor }}
+    >
       <h2>about me</h2>
       <p>
         <span style={{ fontWeight: "500" }}>My name is Josh Kotrous.</span>

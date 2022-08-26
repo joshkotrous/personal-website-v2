@@ -16,3 +16,11 @@
   font-weight: 300;
   color: white;
 }
+
+.sectionContentContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 7vh;
+}

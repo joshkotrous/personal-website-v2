@@ -1,9 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../assets/fonts.css";
 import "../assets/section.css";
 import "../assets/skills.css";
 
-const Skills = () => {
+const Skills = (props) => {
+  Skills.propTypes = {
+    backgroundColor: PropTypes.string,
+  };
+
   const skillList = [
     {
       header: "UiPath",
@@ -37,9 +42,13 @@ const Skills = () => {
   });
 
   return (
-    <div id="skills" className="sectionContainer">
+    <div
+      id="skills"
+      className="sectionContainer"
+      style={{ backgroundColor: props.backgroundColor }}
+    >
       <h2>skills</h2>
-      <div className="skillItemsContainer">
+      <div className="sectionContentContainer">
         <div className="skillHeadersContainer">
           {skillList.map((item, index) => {
             return (

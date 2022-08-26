@@ -30,9 +30,9 @@ function App() {
       <Navigation />
       <HeroBanner />
       <About />
-      <Skills />
+      <Skills backgroundColor="#4D4D4D" />
       <Projects />
-      <Contact />
+      <Contact backgroundColor="#4D4D4D" />
       <VersionNumber />
     </div>
   );
