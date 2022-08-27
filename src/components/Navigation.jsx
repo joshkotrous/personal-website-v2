@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as Scroll from "react-scroll";
 import "../assets/fonts.css";
 import "../assets/navigation.css";
 import { ReactComponent as Hamburger } from "../assets/hamburger.svg";
@@ -46,9 +47,15 @@ const Navigation = () => {
         {navOptions.map((item) => {
           return (
             <div key={item.text} className="navOptionContainer">
-              <a onClick={menuClick} className="navOption" href={item.url}>
+              <Scroll.Link
+                onClick={menuClick}
+                className="navOption"
+                to={item.text}
+                smooth={true}
+                duration={300}
+              >
                 {item.text}
-              </a>
+              </Scroll.Link>
             </div>
           );
         })}
