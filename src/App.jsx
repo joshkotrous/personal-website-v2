@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Navigation from "./components/Navigation.jsx";
 import HeroBanner from "./components/HeroBanner.jsx";
 import About from "./components/About.jsx";
@@ -24,10 +24,15 @@ const appBackgroundStyle = {
 };
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <div style={appStyle}>
+    <div
+      style={appStyle}
+      onClick={() => (showMenu ? setShowMenu(false) : null)}
+    >
       <div style={appBackgroundStyle}></div>
-      <Navigation />
+      <Navigation showMenu={showMenu} setShowMenu={setShowMenu} />
       <HeroBanner />
       <About />
       <Skills backgroundColor="#4D4D4D" />
