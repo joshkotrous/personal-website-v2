@@ -1,10 +1,15 @@
-import React, { useState } from "react";
-import * as Scroll from "react-scroll";
+import React from "react";
+import { Link } from "react-scroll";
+import PropTypes from "prop-types";
 import "../assets/fonts.css";
 import "../assets/navigation.css";
 import { ReactComponent as Hamburger } from "../assets/hamburger.svg";
 
-const Navigation = () => {
+const Navigation = (props) => {
+  Navigation.propTypes = {
+    showMenu: PropTypes.bool,
+    setShowMenu: PropTypes.func,
+  };
   const navOptions = [
     {
       text: "about",
@@ -23,12 +28,11 @@ const Navigation = () => {
       url: "./#contact",
     },
   ];
-  const [showMenu, setShowMenu] = useState(false);
   const menuClick = () => {
-    if (showMenu) {
-      setShowMenu(false);
+    if (props.showMenu) {
+      props.setShowMenu(false);
     } else {
-      setShowMenu(true);
+      props.setShowMenu(true);
     }
   };
 
@@ -41,13 +45,14 @@ const Navigation = () => {
         </div>
       </div>
       <div
-        className="navOptionsContainer"
-        style={showMenu ? {} : { display: "none" }}
+        className={
+          props.showMenu ? "navOptionsContainer" : "navOptionsContainer-hidden"
+        }
       >
         {navOptions.map((item) => {
           return (
             <div key={item.text} className="navOptionContainer">
-              <Scroll.Link
+              <Link
                 onClick={menuClick}
                 className="navOption"
                 to={item.text}
@@ -55,7 +60,7 @@ const Navigation = () => {
                 duration={300}
               >
                 {item.text}
-              </Scroll.Link>
+              </Link>
             </div>
           );
         })}
