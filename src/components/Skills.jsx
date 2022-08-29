@@ -1,14 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
-import "../assets/fonts.css";
-import "../assets/section.css";
 import "../assets/skills.css";
 
-const Skills = (props) => {
-  Skills.propTypes = {
-    backgroundColor: PropTypes.string,
-  };
-
+const Skills = () => {
   const skillList = [
     {
       header: "UiPath",
@@ -42,32 +35,25 @@ const Skills = (props) => {
   });
 
   return (
-    <div
-      id="skills"
-      className="sectionContainer"
-      style={{ backgroundColor: props.backgroundColor }}
-    >
-      <h2>skills</h2>
-      <div className="sectionContentContainer">
-        <div className="skillHeadersContainer">
-          {skillList.map((item, index) => {
-            return (
-              <div key={index + "-header"} className="skillItemHeader">
-                <div>{item.header}</div>
-              </div>
-            );
-          })}
-        </div>
-        <div className="skillBarsContainer">
-          {skillList.map((item, index) => {
-            return (
-              <div key={index + "-skill"} className="skillBarContainer">
-                <div className="skillBarBackground"></div>
-                <div style={skillBarForeground(item.level)}></div>
-              </div>
-            );
-          })}
-        </div>
+    <div className="skillItemsContainer">
+      <div className="skillHeadersContainer">
+        {skillList.map((item, index) => {
+          return (
+            <div key={index + "-header"} className="skillItemHeader">
+              <div>{item.header}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="skillBarsContainer">
+        {skillList.map((item, index) => {
+          return (
+            <div key={index + "-skill"} className="skillBarContainer">
+              <div className="skillBarBackground"></div>
+              <div style={skillBarForeground(item.level)}></div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

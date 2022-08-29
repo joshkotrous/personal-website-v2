@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
 import PropTypes from "prop-types";
-import "../assets/fonts.css";
 import "../assets/navigation.css";
 import { ReactComponent as Hamburger } from "../assets/hamburger.svg";
 
