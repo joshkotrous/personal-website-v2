@@ -15,16 +15,23 @@ const HeroBanner = () => {
     "solution architecture",
   ]);
   const [title, setTitle] = useState(headers[index]);
-
+  const [titlePrefix, setTitlePrefix] = useState("");
   useEffect(() => {
+    setTitle(headers[index]);
+
     const interval = setInterval(() => {
       setIndex(index + 1);
       if (index === headers.length - 1) {
         setIndex(0);
       }
       setTitle(headers[index]);
-    }, 2000);
+    }, 3000);
 
+    if (vowels.includes(title.substring(0, 1))) {
+      setTitlePrefix("n");
+    } else {
+      setTitlePrefix("");
+    }
     return () => clearInterval(interval);
   });
 
@@ -36,9 +43,14 @@ const HeroBanner = () => {
           <div className="horizontalLineTop"></div>
           <div className="headerTextContainer">
             <h1>
-              {vowels.includes(title.substring(0, 1)) ? "an" : "a"}
+              a
+              <span key={titlePrefix} className="cyclingTextPrefix">
+                {titlePrefix}
+              </span>
               <br></br>
-              <span className="cyclingText">{title}</span>
+              <span key={title} className="cyclingText">
+                {title}
+              </span>
               <br></br> enthusiast
             </h1>
           </div>

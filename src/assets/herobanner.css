@@ -26,8 +26,13 @@
   font-family: Urbanist;
 }
 
+.cyclingTextPrefix {
+  animation: fadeinout 3s ease;
+}
+
 .cyclingText {
   font-weight: bold;
+  animation: fadeinout 3s ease;
 }
 
 .verticalLine {
@@ -62,4 +67,14 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
