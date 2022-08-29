@@ -43,16 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-        height: "100%",
-      }}
-    >
+    <div className="contactContainer">
       <div style={{ alignSelf: "flex-start" }}>
         <a
           href="https://github.com/joshkotrous"
@@ -69,10 +60,7 @@ const Contact = () => {
           <LinkedIn className="contactIcon" />
         </a>
       </div>
-      <form
-        style={{ alignSelf: "flex-start", width: "100%" }}
-        onSubmit={handleSubmit}
-      >
+      <form className="formContainer" onSubmit={handleSubmit}>
         <input
           className="emailInput"
           type="text"
@@ -99,17 +87,27 @@ const Contact = () => {
           onChange={(event) => setNote(event.target.value)}
           value={note}
         />
+
         <button className="submitButton" type="submit" value="submit">
           submit
         </button>
+        {showModal ? (
+          <div
+            className={
+              submitSuccessful
+                ? "overlayContainer fadeOut"
+                : "overlayContainer fadeIn"
+            }
+          >
+            <div className="overlay"></div>
+            <Modal
+              loadingMessage="Sending message..."
+              successMessage="Successfully sent message."
+              showCheckBox={submitSuccessful}
+            />
+          </div>
+        ) : null}
       </form>
-      {showModal ? (
-        <Modal
-          loadingMessage="Sending message..."
-          successMessage="Successfully sent message."
-          showCheckBox={submitSuccessful}
-        />
-      ) : null}
     </div>
   );
 };
