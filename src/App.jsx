@@ -1,11 +1,11 @@
 import { React, useState } from "react";
 import Section from "./components/Section.jsx";
-import Navigation from "./components/Navigation.jsx";
-import HeroBanner from "./components/HeroBanner.jsx";
-import About from "./components/About.jsx";
-import Skills from "./components/Skills.jsx";
-import Projects from "./components/Projects.jsx";
-import Contact from "./components/Contact.jsx";
+import Navigation from "./components/Sections/Navigation.jsx";
+import HeroBanner from "./components/Sections/HeroBanner.jsx";
+import About from "./components/Sections/About.jsx";
+import Skills from "./components/Sections/Skills.jsx";
+import Projects from "./components/Sections/Projects.jsx";
+import Contact from "./components/Sections/Contact.jsx";
 import VersionNumber from "./components/VersionNumber.jsx";
 import "./assets/global.css";
 import "./assets/app.css";

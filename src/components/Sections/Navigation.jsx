@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
 import PropTypes from "prop-types";
-import "../assets/navigation.css";
-import { ReactComponent as Hamburger } from "../assets/hamburger.svg";
+import { ReactComponent as Hamburger } from "../../assets/hamburger.svg";
+import "../../assets/navigation.css";
 
 const Navigation = (props) => {
   Navigation.propTypes = {

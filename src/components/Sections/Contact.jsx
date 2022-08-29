@@ -1,8 +1,8 @@
 import { React, useState } from "react";
-import { ReactComponent as GitHub } from "../assets/github.svg";
-import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
+import { ReactComponent as GitHub } from "../../assets/github.svg";
+import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import axios from "axios";
-import "../assets/contact.css";
+import "../../assets/contact.css";
 
 const Contact = () => {
   const [name, setName] = useState("");

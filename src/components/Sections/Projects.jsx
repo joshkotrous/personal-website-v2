@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/projects.css";
+import "../../assets/projects.css";
 
 const Projects = () => {
   const projectsList = [
