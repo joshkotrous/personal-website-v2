@@ -13,7 +13,7 @@ const Modal = (props) => {
   return (
     <div
       className={
-        props.showCheckBox ? "modalContainer fadeOut" : "modalContainer"
+        props.showCheckBox ? "modalContainer fadeOut" : "modalContainer fadeIn"
       }
     >
       <div className="statusContainer">
