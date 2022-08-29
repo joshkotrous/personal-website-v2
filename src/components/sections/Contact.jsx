@@ -48,7 +48,9 @@ const Contact = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         width: "100%",
+        height: "100%",
       }}
     >
       <div style={{ alignSelf: "flex-start" }}>
@@ -103,7 +105,7 @@ const Contact = () => {
       </form>
       {showModal ? (
         <Modal
-          loadingMessage="Sending form..."
+          loadingMessage="Sending message..."
           successMessage="Successfully sent message."
           showCheckBox={submitSuccessful}
         />
