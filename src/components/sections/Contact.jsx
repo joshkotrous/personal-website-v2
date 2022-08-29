@@ -2,12 +2,15 @@ import { React, useState } from "react";
 import { ReactComponent as GitHub } from "../../assets/github.svg";
 import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import axios from "axios";
+import Modal from "./Modal.jsx";
 import "../../assets/contact.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
   const sendEmail = (subject, body) => {
     const endpoint =
@@ -18,6 +21,13 @@ const Contact = () => {
         subject: subject,
         body: body,
       })
+      .then(() => {
+        setSubmitSuccessful(true);
+        setTimeout(() => {
+          setShowModal(false);
+          setSubmitSuccessful(false);
+        }, 4000);
+      })
       .catch(function (error) {
         console.log(error);
       });
@@ -25,6 +35,7 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setShowModal(true);
     sendEmail("Inquiry from " + name, "Email: " + email + "\n\n" + note);
     setName("");
     setEmail("");
@@ -32,8 +43,15 @@ const Contact = () => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
-      <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
+      <div style={{ alignSelf: "flex-start" }}>
         <a
           href="https://github.com/joshkotrous"
           rel="noreferrer"
@@ -49,7 +67,10 @@ const Contact = () => {
           <LinkedIn className="contactIcon" />
         </a>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form
+        style={{ alignSelf: "flex-start", width: "100%" }}
+        onSubmit={handleSubmit}
+      >
         <input
           className="emailInput"
           type="text"
@@ -80,6 +101,13 @@ const Contact = () => {
           submit
         </button>
       </form>
+      {showModal ? (
+        <Modal
+          loadingMessage="Sending form..."
+          successMessage="Successfully sent message."
+          showCheckBox={submitSuccessful}
+        />
+      ) : null}
     </div>
   );
 };
