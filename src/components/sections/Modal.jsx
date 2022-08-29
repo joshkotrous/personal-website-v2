@@ -11,7 +11,11 @@ const Modal = (props) => {
     successMessage: PropTypes.string,
   };
   return (
-    <div className={props.showCheckBox ? "container fadeOut" : "container"}>
+    <div
+      className={
+        props.showCheckBox ? "modalContainer fadeOut" : "modalContainer"
+      }
+    >
       <div className="statusContainer">
         {props.showCheckBox ? <Check /> : <Loading className="loadingStatus" />}
       </div>
