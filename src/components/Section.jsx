@@ -8,7 +8,7 @@ const Section = (props) => {
   Section.propTypes = {
     backgroundColor: PropTypes.string,
     header: PropTypes.string,
-    children: PropTypes.children,
+    children: PropTypes.node,
     id: PropTypes.string,
   };
   const { ref, inView } = useInView();
