@@ -12,7 +12,7 @@ const Projects = () => {
   ];
 
   return (
-    <div style={{ marginTop: "10%" }}>
+    <div>
       {projectsList.map((item, index) => {
         return (
           <div key={index + "-project"} className="projectContainer">
