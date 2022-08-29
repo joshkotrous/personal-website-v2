@@ -1,43 +1,35 @@
 import { React, useState } from "react";
-import Navigation from "./components/Navigation.jsx";
-import HeroBanner from "./components/HeroBanner.jsx";
-import About from "./components/About.jsx";
-import Skills from "./components/Skills.jsx";
-import Projects from "./components/Projects.jsx";
-import Contact from "./components/Contact.jsx";
+import Section from "./components/Section.jsx";
+import Navigation from "./components/sections/Navigation.jsx";
+import HeroBanner from "./components/sections/HeroBanner.jsx";
+import About from "./components/sections/About.jsx";
+import Skills from "./components/sections/Skills.jsx";
+import Projects from "./components/sections/Projects.jsx";
+import Contact from "./components/sections/Contact.jsx";
 import VersionNumber from "./components/VersionNumber.jsx";
 import "./assets/global.css";
-
-const appStyle = {
-  width: "100%",
-  height: "100%",
-  overflow: "hidden",
-  position: "relative",
-};
-
-const appBackgroundStyle = {
-  background: "#606060",
-  height: "100vh",
-  width: "100vw",
-  position: "fixed",
-  zIndex: "-1",
-};
+import "./assets/app.css";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div
-      style={appStyle}
-      onClick={() => (showMenu ? setShowMenu(false) : null)}
-    >
-      <div style={appBackgroundStyle}></div>
+    <div className="app" onClick={() => (showMenu ? setShowMenu(false) : null)}>
+      <div className="appBackground"></div>
       <Navigation showMenu={showMenu} setShowMenu={setShowMenu} />
       <HeroBanner />
-      <About />
-      <Skills backgroundColor="#4D4D4D" />
-      <Projects />
-      <Contact backgroundColor="#4D4D4D" />
+      <Section header="about me" id="about">
+        <About />
+      </Section>
+      <Section header="skills" id="skills" backgroundColor="#4D4D4D">
+        <Skills />
+      </Section>
+      <Section header="projects" id="projects">
+        <Projects />
+      </Section>
+      <Section header="contact" id="contact" backgroundColor="#4D4D4D">
+        <Contact />
+      </Section>
       <VersionNumber />
     </div>
   );

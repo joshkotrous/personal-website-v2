@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../assets/fonts.css";
-import "../assets/herobanner.css";
+import "../../assets/herobanner.css";
 
 const HeroBanner = () => {
   const [index, setIndex] = useState(0);
@@ -16,6 +15,7 @@ const HeroBanner = () => {
   ]);
   const [title, setTitle] = useState(headers[index]);
   const [titlePrefix, setTitlePrefix] = useState("");
+
   useEffect(() => {
     setTitle(headers[index]);
 

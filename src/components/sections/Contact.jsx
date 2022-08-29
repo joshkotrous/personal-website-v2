@@ -1,17 +1,10 @@
 import { React, useState } from "react";
-import PropTypes from "prop-types";
+import { ReactComponent as GitHub } from "../../assets/github.svg";
+import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import axios from "axios";
-import "../assets/fonts.css";
-import "../assets/section.css";
-import "../assets/contact.css";
-import { ReactComponent as GitHub } from "../assets/github.svg";
-import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
+import "../../assets/contact.css";
 
-const Contact = (props) => {
-  Contact.propTypes = {
-    backgroundColor: PropTypes.string,
-  };
-
+const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
@@ -39,12 +32,7 @@ const Contact = (props) => {
   };
 
   return (
-    <div
-      id="contact"
-      className="sectionContainer"
-      style={{ backgroundColor: props.backgroundColor }}
-    >
-      <h2>contact</h2>
+    <div style={{ width: "100%" }}>
       <div>
         <a
           href="https://github.com/joshkotrous"
