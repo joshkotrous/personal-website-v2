@@ -1,29 +1,32 @@
-import React from "react";
+import { React, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "../../assets/skills.css";
 
 const Skills = () => {
   const skillList = [
     {
       header: "UiPath",
-      level: "100",
+      level: "100%",
     },
     {
       header: "Workato",
-      level: "100",
+      level: "100%",
     },
     {
       header: "React",
-      level: "75",
+      level: "75%",
     },
     {
       header: "Python",
-      level: "50",
+      level: "50%",
     },
     {
       header: "AWS",
-      level: "25",
+      level: "25%",
     },
   ];
+  const { ref, inView } = useInView();
 
   const skillBarForeground = (percentage) => ({
     position: "absolute",
@@ -34,8 +37,10 @@ const Skills = () => {
     borderRadius: "30px",
   });
 
+  useEffect(() => {});
+
   return (
-    <div className="skillItemsContainer">
+    <div ref={ref} className="skillItemsContainer">
       <div className="skillHeadersContainer">
         {skillList.map((item, index) => {
           return (
@@ -50,7 +55,14 @@ const Skills = () => {
           return (
             <div key={index + "-skill"} className="skillBarContainer">
               <div className="skillBarBackground"></div>
-              <div style={skillBarForeground(item.level)}></div>
+              {inView ? (
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: item.level }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  style={skillBarForeground(item.level)}
+                ></motion.div>
+              ) : null}
             </div>
           );
         })}
