@@ -2,7 +2,7 @@ name: increment-version
 
 on:
   pull_request:
-    types: [opened, synchronize, edited]
+    types: [opened]
     branches:
       - master
 
