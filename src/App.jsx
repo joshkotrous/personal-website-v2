@@ -8,6 +8,7 @@ import Projects from "./components/sections/Projects.jsx";
 import Contact from "./components/sections/Contact.jsx";
 import "./assets/global.css";
 import "./assets/app.css";
+import "./assets/fonts.css";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
