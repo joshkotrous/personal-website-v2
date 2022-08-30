@@ -19,7 +19,12 @@
 
 .sectionContentContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 3vh;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
 }

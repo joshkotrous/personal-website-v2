@@ -48,12 +48,20 @@ const Section = (props) => {
       <motion.div ref={ref} animate={headerAnimation}>
         <h2>{props.header}</h2>
       </motion.div>
-      <motion.div
-        className="sectionContentContainer"
-        animate={contentAnimation}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        {props.children}
-      </motion.div>
+        <motion.div
+          className="sectionContentContainer"
+          animate={contentAnimation}
+        >
+          {props.children}
+        </motion.div>
+      </div>
     </div>
   );
 };
