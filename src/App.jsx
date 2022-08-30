@@ -6,7 +6,6 @@ import About from "./components/sections/About.jsx";
 import Skills from "./components/sections/Skills.jsx";
 import Projects from "./components/sections/Projects.jsx";
 import Contact from "./components/sections/Contact.jsx";
-import VersionNumber from "./components/VersionNumber.jsx";
 import "./assets/global.css";
 import "./assets/app.css";
 
@@ -30,7 +29,6 @@ function App() {
       <Section header="contact" id="contact" backgroundColor="#4D4D4D">
         <Contact />
       </Section>
-      <VersionNumber />
     </div>
   );
 }

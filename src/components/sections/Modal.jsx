@@ -17,7 +17,11 @@ const Modal = (props) => {
       }
     >
       <div className="statusContainer">
-        {props.showCheckBox ? <Check /> : <Loading className="loadingStatus" />}
+        {props.showCheckBox ? (
+          <Check className="statusIcon" />
+        ) : (
+          <Loading className="statusIcon loadingStatus" />
+        )}
       </div>
       {props.showCheckBox ? props.successMessage : props.loadingMessage}
     </div>
