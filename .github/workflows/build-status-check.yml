@@ -2,7 +2,7 @@ name: build-status-check
 
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [edited, synchronize]
     branches:
       - master
 
