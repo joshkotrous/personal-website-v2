@@ -13,12 +13,13 @@
   font-family: Urbanist;
   padding-right: 16px;
   padding-left: 16px;
-  padding-top: 16px;
+  padding-top: 8px;
   padding-bottom: 0;
 }
 
 .headerContainer > h1 {
   margin: 0;
+  font-size: 36px;
 }
 
 .navOptionsContainer {
@@ -26,7 +27,7 @@
   position: absolute;
   right: 0;
   margin-right: 16px;
-  height: 100px;
+  height: 200%;
   overflow: auto;
   opacity: 1;
   transition: height 0.5s ease, opacity 0.5s ease-in-out;
@@ -50,7 +51,7 @@
 
 .navOption {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
   font-family: Urbanist;
   font-weight: 500;
   color: white;

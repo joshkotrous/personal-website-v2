@@ -40,7 +40,7 @@ const Navigation = (props) => {
       <div className="headerContainer">
         <h1>josh</h1>
         <div>
-          <Hamburger onClick={menuClick} />
+          <Hamburger className="hamburger" onClick={menuClick} />
         </div>
       </div>
       <div
