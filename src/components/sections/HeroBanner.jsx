@@ -11,7 +11,6 @@ const HeroBanner = () => {
     "uipath",
     "python",
     "aws",
-    "solution architecture",
   ]);
   const [title, setTitle] = useState(headers[index]);
   const [titlePrefix, setTitlePrefix] = useState("");
