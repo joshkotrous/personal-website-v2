@@ -44,22 +44,6 @@ const Contact = () => {
 
   return (
     <div className="contactContainer">
-      <div style={{ alignSelf: "flex-start" }}>
-        <a
-          href="https://github.com/joshkotrous"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <GitHub className="contactIcon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/joshkotrous/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <LinkedIn className="contactIcon" />
-        </a>
-      </div>
       <form
         className={
           showModal
@@ -70,6 +54,22 @@ const Contact = () => {
         }
         onSubmit={handleSubmit}
       >
+        <div style={{ alignSelf: "flex-start" }}>
+          <a
+            href="https://github.com/joshkotrous"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <GitHub className="contactIcon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/joshkotrous/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <LinkedIn className="contactIcon" />
+          </a>
+        </div>
         <input
           className="emailInput"
           type="text"
