@@ -59,7 +59,7 @@ const Skills = () => {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: item.level }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  transition={{ duration: 0.75, delay: 0.25 }}
                   style={skillBarForeground(item.level)}
                 ></motion.div>
               ) : null}
