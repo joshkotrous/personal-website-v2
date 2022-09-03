@@ -60,7 +60,6 @@ const Navigation = (props) => {
           </div>
         ) : (
           <div style={{ display: "flex" }}>
-            {" "}
             {navOptions.map((item) => {
               return (
                 <div key={item.text} className="navOptionContainer">
