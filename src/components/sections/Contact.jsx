@@ -60,7 +60,16 @@ const Contact = () => {
           <LinkedIn className="contactIcon" />
         </a>
       </div>
-      <form className="formContainer" onSubmit={handleSubmit}>
+      <form
+        className={
+          showModal
+            ? submitSuccessful
+              ? "formContainer formFadeIn"
+              : "formContainer formFadeOut"
+            : "formContainer formFadeIn"
+        }
+        onSubmit={handleSubmit}
+      >
         <input
           className="emailInput"
           type="text"
@@ -91,23 +100,18 @@ const Contact = () => {
         <button className="submitButton" type="submit" value="submit">
           submit
         </button>
-        {showModal ? (
-          <div
-            className={
-              submitSuccessful
-                ? "overlayContainer fadeOut"
-                : "overlayContainer fadeIn"
-            }
-          >
-            <div className="overlay"></div>
+      </form>
+      {showModal ? (
+        <div style={{ position: "absolute", width: "100%" }}>
+          <div className="overlayContainer">
             <Modal
               loadingMessage="Sending message..."
               successMessage="Successfully sent message."
               showCheckBox={submitSuccessful}
             />
           </div>
-        ) : null}
-      </form>
+        </div>
+      ) : null}
     </div>
   );
 };
