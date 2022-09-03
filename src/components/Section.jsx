@@ -19,23 +19,23 @@ const Section = (props) => {
       headerAnimation.start({
         y: 0,
         opacity: 1,
-        transition: { duration: 0.5 },
+        transition: { duration: 0.25 },
       });
       contentAnimation.start({
         y: 0,
         opacity: 1,
-        transition: { duration: 0.5, delay: 0.5 },
+        transition: { duration: 0.25, delay: 0.3 },
       });
     } else {
       headerAnimation.start({
         y: 50,
         opacity: 0,
-        transition: { duration: 0.5 },
+        transition: { duration: 0.25 },
       });
       contentAnimation.start({
         y: 50,
         opacity: 0,
-        transition: { duration: 0.5, delay: 0.5 },
+        transition: { duration: 0.25, delay: 0.3 },
       });
     }
   }, [inView]);
