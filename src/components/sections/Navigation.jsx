@@ -35,7 +35,7 @@ const Navigation = (props) => {
     }
   };
   const [width, setWidth] = useState(window.innerWidth);
-  const [isMobile, setIsMobile] = useState();
+  const [isMobile, setIsMobile] = useState(width <= 768);
 
   const handleWindowResize = () => {
     setWidth(window.innerWidth);
