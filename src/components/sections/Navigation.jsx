@@ -80,7 +80,9 @@ const Navigation = (props) => {
       </div>
       <div
         className={
-          props.showMenu ? "navOptionsContainer" : "navOptionsContainer-hidden"
+          props.showMenu && isMobile
+            ? "navOptionsContainer"
+            : "navOptionsContainer-hidden"
         }
       >
         {navOptions.map((item) => {
