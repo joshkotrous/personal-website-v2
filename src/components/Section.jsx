@@ -45,7 +45,7 @@ const Section = (props) => {
       className="sectionContainer"
       style={{ backgroundColor: props.backgroundColor }}
     >
-      <motion.div ref={ref} animate={headerAnimation}>
+      <motion.div animate={headerAnimation}>
         <h2>{props.header}</h2>
       </motion.div>
       <div
@@ -56,6 +56,7 @@ const Section = (props) => {
         }}
       >
         <motion.div
+          ref={ref}
           className="sectionContentContainer"
           animate={contentAnimation}
         >

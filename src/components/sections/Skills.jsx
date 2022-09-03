@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../../assets/skills.css";
@@ -37,35 +37,35 @@ const Skills = () => {
     borderRadius: "30px",
   });
 
-  useEffect(() => {});
-
   return (
-    <div ref={ref} className="skillItemsContainer">
-      <div className="skillHeadersContainer">
-        {skillList.map((item, index) => {
-          return (
-            <div key={index + "-header"} className="skillItemHeader">
-              <div>{item.header}</div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="skillBarsContainer">
-        {skillList.map((item, index) => {
-          return (
-            <div key={index + "-skill"} className="skillBarContainer">
-              <div className="skillBarBackground"></div>
-              {inView ? (
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: item.level }}
-                  transition={{ duration: 0.75, delay: 0.25 }}
-                  style={skillBarForeground(item.level)}
-                ></motion.div>
-              ) : null}
-            </div>
-          );
-        })}
+    <div className="skillItemsSectionContainer">
+      <div ref={ref} className="skillItemsContainer">
+        <div className="skillHeadersContainer">
+          {skillList.map((item, index) => {
+            return (
+              <div key={index + "-header"} className="skillItemHeader">
+                <div>{item.header}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="skillBarsContainer">
+          {skillList.map((item, index) => {
+            return (
+              <div key={index + "-skill"} className="skillBarContainer">
+                <div className="skillBarBackground"></div>
+                {inView ? (
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: item.level }}
+                    transition={{ duration: 0.75, delay: 0.25 }}
+                    style={skillBarForeground(item.level)}
+                  ></motion.div>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

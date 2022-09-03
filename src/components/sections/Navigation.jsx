@@ -40,7 +40,6 @@ const Navigation = (props) => {
   const handleWindowResize = () => {
     setWidth(window.innerWidth);
     setIsMobile(width <= 768);
-    console.log(isMobile);
   };
 
   useEffect(() => {

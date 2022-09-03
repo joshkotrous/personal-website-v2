@@ -1,12 +1,16 @@
-.projectContainer {
+.projectsContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  height: 250px;
-  width: 250px;
-  margin: 16px;
-  margin-bottom: 12vh;
+  width: 100%;
+}
+
+.projectContainer {
+  position: relative;
+  margin: 5%;
+  max-width: 200px;
+  flex: 1 1 200px;
 }
 
 .projectFrameContainer {
@@ -15,7 +19,6 @@
   align-items: center;
   width: 200px;
   height: 200px;
-  padding: 16px;
   background: linear-gradient(
       225deg,
       rgba(255, 92, 0, 0.44) 26.04%,
@@ -25,14 +28,15 @@
 }
 
 .projectFrame {
+  position: absolute;
   border: none;
   width: 540px;
   height: 540px;
   pointer-events: none;
+  transform: scale(0.35);
 }
 
 .projectText {
-  width: 91%;
   text-align: left;
   margin-top: 8px;
 }
@@ -41,15 +45,14 @@
   color: white;
   text-decoration: none;
   font-family: Urbanist;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .projectDescription {
-  width: 91%;
   text-align: left;
   margin-top: 8px;
   color: white;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
 }
