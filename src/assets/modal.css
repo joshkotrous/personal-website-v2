@@ -19,11 +19,13 @@
 }
 
 .fadeIn {
-  animation: fadeIn 0.5s forwards;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 .fadeOut {
-  animation: fadeOut 1.5s 1s forwards;
+  opacity: 0;
+  transition: opacity 1.5s 1s;
 }
 
 .statusContainer {
@@ -48,23 +50,5 @@
   }
   to {
     transform: rotate(720deg);
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
