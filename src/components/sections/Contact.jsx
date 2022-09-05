@@ -11,6 +11,8 @@ const Contact = () => {
   const [note, setNote] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
+  const [modalFadeOut, setModalFadeOut] = useState(false);
 
   const sendEmail = (subject, body) => {
     const endpoint =
@@ -22,10 +24,13 @@ const Contact = () => {
         body: body,
       })
       .then(() => {
+        setSubmitFailed(false);
         setSubmitSuccessful(true);
+        setModalFadeOut(true);
         setTimeout(() => {
           setShowModal(false);
           setSubmitSuccessful(false);
+          setModalFadeOut(false);
         }, 4000);
       })
       .catch(function (error) {
@@ -35,6 +40,19 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!name || !email || !note) {
+      setSubmitFailed(true);
+      setShowModal(true);
+      setTimeout(() => {
+        setModalFadeOut(true);
+        setTimeout(() => {
+          setShowModal(false);
+          setModalFadeOut(false);
+          setSubmitFailed(false);
+        }, 2000);
+      }, 4000);
+      return;
+    }
     setShowModal(true);
     sendEmail("Inquiry from " + name, "Email: " + email + "\n\n" + note);
     setName("");
@@ -47,7 +65,7 @@ const Contact = () => {
       <form
         className={
           showModal
-            ? submitSuccessful
+            ? modalFadeOut
               ? "formContainer formFadeIn"
               : "formContainer formFadeOut"
             : "formContainer formFadeIn"
@@ -107,7 +125,10 @@ const Contact = () => {
             <Modal
               loadingMessage="Sending message..."
               successMessage="Successfully sent message."
+              failedMessage="All fields must be populated."
               showCheckBox={submitSuccessful}
+              showFailed={submitFailed}
+              fadeOut={modalFadeOut}
             />
           </div>
         </div>
