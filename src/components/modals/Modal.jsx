@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as Check } from "../../assets/check.svg";
-import { ReactComponent as Loading } from "../../assets/loading.svg";
+
+import Check from "../../assets/check.svg";
+import Loading from "../../assets/loading.svg";
 import "../../assets/modal.css";
 
 const Modal = (props) => {
@@ -18,9 +19,9 @@ const Modal = (props) => {
     >
       <div className="statusContainer">
         {props.showCheckBox ? (
-          <Check className="statusIcon" />
+          <img src={Check} className="statusIcon" />
         ) : (
-          <Loading className="statusIcon loadingStatus" />
+          <img src={Loading} className="statusIcon loadingStatus" />
         )}
       </div>
       {props.showCheckBox ? props.successMessage : props.loadingMessage}

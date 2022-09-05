@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <p>
-      <span style={{ fontWeight: "500" }}>My name is Josh Kotrous.</span>
+      <span style={{ fontWeight: "300" }}>My name is Josh Kotrous.</span>
       <br />
       <br />
       Currently working for Neostella as the Development Manager, I am a

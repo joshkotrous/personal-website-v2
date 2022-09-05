@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import Section from "./components/Section.jsx";
 import Navigation from "./components/sections/Navigation.jsx";
 import HeroBanner from "./components/sections/HeroBanner.jsx";
@@ -7,7 +7,7 @@ import Skills from "./components/sections/Skills.jsx";
 import Projects from "./components/sections/Projects.jsx";
 import Contact from "./components/sections/Contact.jsx";
 import "./assets/global.css";
-import "./assets/app.css";
+import "./App.css";
 import "./assets/fonts.css";
 
 function App() {

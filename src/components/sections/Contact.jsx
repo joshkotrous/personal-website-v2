@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-import { ReactComponent as GitHub } from "../../assets/github.svg";
-import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
+import GitHub from "../../assets/github.svg";
+import LinkedIn from "../../assets/linkedin.svg";
 import axios from "axios";
 import Modal from "../modals/Modal.jsx";
 import "../../assets/contact.css";
@@ -60,14 +60,14 @@ const Contact = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <GitHub className="contactIcon" />
+            <img src={GitHub} className="contactIcon" />
           </a>
           <a
             href="https://www.linkedin.com/in/joshkotrous/"
             rel="noreferrer"
             target="_blank"
           >
-            <LinkedIn className="contactIcon" />
+            <img src={LinkedIn} className="contactIcon" />
           </a>
         </div>
         <input

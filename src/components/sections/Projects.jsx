@@ -1,7 +1,7 @@
 import { React } from "react";
-import "../../assets/projects.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import "../../assets/projects.css";
 
 const Projects = () => {
   const projectsList = [
