@@ -1,7 +1,8 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import PropTypes from "prop-types";
-import { ReactComponent as Hamburger } from "../../assets/hamburger.svg";
+
+import Hamburger from "../../assets/hamburger.svg";
 import "../../assets/navigation.css";
 
 const Navigation = (props) => {
@@ -56,7 +57,7 @@ const Navigation = (props) => {
         <h1>josh</h1>
         {isMobile ? (
           <div>
-            <Hamburger onClick={menuClick} />
+            <img src={Hamburger} onClick={menuClick} />
           </div>
         ) : (
           <div style={{ display: "flex" }}>

@@ -5,6 +5,7 @@
   height: auto;
   min-height: 100vh;
   padding: 30px 10%;
+  letter-spacing: 0.5px;
 }
 
 .sectionContainer h2 {
@@ -14,7 +15,7 @@
 
 .sectionContainer p {
   font-family: Urbanist;
-  font-weight: 300;
+  font-weight: 100;
   color: white;
 }
 
