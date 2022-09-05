@@ -50,7 +50,7 @@ const Contact = () => {
           setModalFadeOut(false);
           setSubmitFailed(false);
         }, 2000);
-      }, 4000);
+      }, 1500);
       return;
     }
     setShowModal(true);
